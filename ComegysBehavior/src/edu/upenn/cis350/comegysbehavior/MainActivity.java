@@ -17,6 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.parse.Parse;
@@ -40,6 +42,9 @@ public class MainActivity extends FragmentActivity implements
 	 */
 	ViewPager mViewPager;
 
+	// spinner for settings
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -118,7 +123,8 @@ public class MainActivity extends FragmentActivity implements
 		public SectionsPagerAdapter(FragmentManager fm) {
 			super(fm);
 		}
-
+		
+		/*
 		@Override
 		public Fragment getItem(int position) {
 			// getItem is called to instantiate the fragment for the given page.
@@ -127,6 +133,19 @@ public class MainActivity extends FragmentActivity implements
 			Fragment fragment = new DummySectionFragment();
 			Bundle args = new Bundle();
 			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+			fragment.setArguments(args);
+			return fragment;
+		}
+		*/
+		
+		@Override
+		public Fragment getItem(int position) {
+			// getItem is called to instantiate the fragment for the given page.
+			// Return a StrategySectionFragment (defined as a static inner class
+			// below) with the page number as its lone argument.
+			Fragment fragment = new BehaviorFragment();
+			Bundle args = new Bundle();
+			args.putInt(BehaviorFragment.ARG_SECTION_NUMBER, position + 1);
 			fragment.setArguments(args);
 			return fragment;
 		}
@@ -150,6 +169,36 @@ public class MainActivity extends FragmentActivity implements
 		}
 	}
 
+
+	
+	/**
+	 * Fragment that shows behavior report
+	 */
+	public static class BehaviorFragment extends Fragment {
+		
+		public static final String ARG_SECTION_NUMBER = "section_number";
+		public BehaviorFragment() {
+		}
+		
+		private Spinner strategy_spinner, settings_spinner;
+		
+		@Override
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+			View rootView = inflater.inflate(R.layout.report,
+					container, false);
+			setSpinnerContent(rootView);
+			
+			return rootView;
+		}
+		private void setSpinnerContent( View view )
+		{
+		  strategy_spinner = (Spinner) view.findViewById( R.id.strategy_spinner );
+		  settings_spinner = (Spinner) view.findViewById( R.id.settings_spinner );
+		 }
+	}
+	
+	
 	/**
 	 * A dummy fragment representing a section of the app, but that simply
 	 * displays dummy text.
