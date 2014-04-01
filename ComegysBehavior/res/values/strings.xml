@@ -5,5 +5,32 @@
     <string name="action_settings">Settings</string>
     <string name="title_section1">Form</string>
     <string name="title_section2">Reports</string>
-
+    
+    <string-array name="strategy_array">
+        <item>"Planned ignoring (differential attention)"</item>
+        <item>"Behavior log (stars &amp; checks)"</item>
+        <item>"Re-teach/review expectations"</item>
+        <item>"Restorative action"</item>
+        <item>"Apology (verbal and/or written)"</item>
+        <item>"Scholar pairing/buddy time-out"</item>
+        <item>"Time-out",</item>
+        <item>"Age-appropriate writing activity"</item>
+        <item>"Behavior processing form",</item>
+        <item>"Teacher/scholar conversation outside classroom"</item>
+        <item>"Conversation with family"</item>
+        <item>"Conference"</item>
+        <item>"Loss of privileges",</item>
+        <item>"Other"}</item>
+        </string-array>
+        
+    <string-array name="settings_array">
+           <item>"classroom"</item>
+           <item>"hallway/stairs"</item>
+           <item>"bathroom"</item>
+           <item>"cafeteria/auditorium"</item>
+           <item>"yard/outdoors"</item>
+    </string-array>
+ 
 </resources>
+
+
