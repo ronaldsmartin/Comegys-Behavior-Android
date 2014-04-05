@@ -17,6 +17,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -180,7 +182,7 @@ public class MainActivity extends FragmentActivity implements
 		public BehaviorFragment() {
 		}
 		
-		private Spinner strategy_spinner, settings_spinner;
+		private Spinner strategy_spinner, settings_spinner, behavior_spinner, academic_spinner;
 		
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -195,9 +197,12 @@ public class MainActivity extends FragmentActivity implements
 		{
 		  strategy_spinner = (Spinner) view.findViewById( R.id.strategy_spinner );
 		  settings_spinner = (Spinner) view.findViewById( R.id.settings_spinner );
+		  behavior_spinner = (Spinner) view.findViewById( R.id.behavior_spinner);
+		  academic_spinner = (Spinner) view.findViewById( R.id.academic_spinner); 
 		 }
-	}
-	
+		
+		
+	}	
 	
 	/**
 	 * A dummy fragment representing a section of the app, but that simply
