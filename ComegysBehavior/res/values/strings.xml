@@ -6,31 +6,84 @@
     <string name="title_section1">Form</string>
     <string name="title_section2">Reports</string>
     
+    <string name="scholar_name">Scholar Name</string>
+    <string name="grade">Grade</string>
+    <string name="date">Date</string>
+    <string name="b_report">Behavior Report</string>
+    <string name="a_report">Academic Report</string>
+    <string name="strategies">Strategies / Interventions Used By Staff</string>
+    <string name="location">Setting</string>
+    
     <string-array name="strategy_array">
-        <item>"Planned ignoring (differential attention)"</item>
-        <item>"Behavior log (stars &amp; checks)"</item>
-        <item>"Re-teach/review expectations"</item>
-        <item>"Restorative action"</item>
-        <item>"Apology (verbal and/or written)"</item>
-        <item>"Scholar pairing/buddy time-out"</item>
-        <item>"Time-out",</item>
-        <item>"Age-appropriate writing activity"</item>
-        <item>"Behavior processing form",</item>
-        <item>"Teacher/scholar conversation outside classroom"</item>
-        <item>"Conversation with family"</item>
-        <item>"Conference"</item>
-        <item>"Loss of privileges",</item>
-        <item>"Other"}</item>
+        <item>Planned ignoring (differential attention)</item>
+        <item>Behavior log (stars &amp; checks)</item>
+        <item>Re-teach/review expectations</item>
+        <item>Restorative action</item>
+        <item>Apology (verbal and/or written)</item>
+        <item>Scholar pairing/buddy time-out</item>
+        <item>Time-out</item>
+        <item>Age-appropriate writing activity</item>
+        <item>Behavior processing form</item>
+        <item>Teacher/scholar conversation outside classroom</item>
+        <item>Conversation with family</item>
+        <item>Conference</item>
+        <item>Loss of privileges</item>
+        <item>Other</item>
         </string-array>
         
     <string-array name="settings_array">
-           <item>"classroom"</item>
-           <item>"hallway/stairs"</item>
-           <item>"bathroom"</item>
-           <item>"cafeteria/auditorium"</item>
-           <item>"yard/outdoors"</item>
+           <item>classroom</item>
+           <item>hallway/stairs</item>
+           <item>bathroom</item>
+           <item>cafeteria/auditorium</item>
+           <item>yard/outdoors</item>
     </string-array>
- 
+    
+    <string-array name="type_array">
+        <item>Behavior Report</item>
+        <item>Academic Report</item>
+    </string-array>
+    
+    <string-array name="behavior_array">
+        <item>Respect for self &amp; others</item>
+        <item>Following directions</item>
+        <item>Positive conflict resolution</item>
+        <item>Peer mediation</item>
+        <item>Helping peer / staff</item>
+        <item>Leadership</item>
+        <item>Dealing with adversity positively</item>
+        <item>Going above and beyond</item>
+        <item>Refusal to follow directions and/or participate</item>
+        <item>Disruption of class / activity / etc</item>
+        <item>Disrespect / disregard of staff / scholars</item>
+        <item>Inappropriate language / gestures</item>
+        <item>Inappropriate physical contact / fighting / violence</item>
+        <item>Teasing / instigating arguments or conflict</item>
+        <item>Running in hallway / common spaces</item>
+        <item>Leaving supervision / class / grounds unattended</item>
+        <item>Failure to follow program / school rules</item>
+        <item>Other</item>
+    </string-array>
+    
+    <string-array name="academic_array">
+        <item>Respects learning for self &amp; others</item>
+        <item>Follows directions</item>
+        <item>Consistently prepared and organized</item>
+        <item>Completes homework / assignments</item>
+        <item>Stays on task</item>
+        <item>Peer tutoring (give or receive)</item>
+        <item>Struggles with:</item>
+        <item>Disruption of class / lesson / activity</item>
+        <item>Refusal to follow directions and/or participate</item>
+        <item>Unprepared / disorganized</item>
+        <item>Failure to complete homework / assignment</item>
+        <item>Questionable academic integrity</item>
+        <item>Other</item>        
+    </string-array>
+    
+    <string-array name="temp_array">
+        <item>Please choose report type (Academic or Behavior)</item>
+    </string-array>
 </resources>
 
 
