@@ -24,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -251,7 +252,105 @@ public class MainActivity extends FragmentActivity implements
 	
 		
 		
-	}	
+	}
+	
+	public void onCheckboxClicked(View view) {
+	    // Is the view now checked?
+	    boolean checked = ((CheckBox) view).isChecked();
+	    
+	    // Check which checkbox was clicked
+	    switch(view.getId()) {
+	        case R.id.checkbox_bh1:
+	            if (checked)
+
+	            break;
+	        case R.id.checkbox_bh2:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh3:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh4:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh5:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh6:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh7:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh8:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh9:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh10:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh11:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh12:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh13:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh14:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh15:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh16:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh17:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	        case R.id.checkbox_bh18:
+	            if (checked)
+	                // Cheese me
+
+	            break;
+	    }
+	}
 	
 	/**
 	 * A dummy fragment representing a section of the app, but that simply
