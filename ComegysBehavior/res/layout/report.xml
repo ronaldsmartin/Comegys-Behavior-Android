@@ -1,3 +1,7 @@
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
 <LinearLayout 
 xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -51,42 +55,121 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </DatePicker>
         
         
-        // drop-down for behavior report
-        <LinearLayout android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+        // checkboxes for behavior report
             
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/b_report" />
-        <Spinner
-            android:id="@+id/behavior_spinner"
+        // 1
+        <CheckBox android:id="@+id/checkbox_bh1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/behavior_array" />
-            
-        </LinearLayout>
-        
-        
-        
-        // drop-down for academic report
-        <LinearLayout android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-            
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/a_report" />
-        <Spinner
-            android:id="@+id/academic_spinner"
+            android:text="@string/bh1"
+            android:onClick="onCheckboxClicked"/>
+        // 2
+        <CheckBox android:id="@+id/checkbox_bh2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/academic_array" />
-            
-        </LinearLayout>
+            android:text="@string/bh2"
+            android:onClick="onCheckboxClicked"/>
+        // 3
+        <CheckBox android:id="@+id/checkbox_bh3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh3"
+            android:onClick="onCheckboxClicked"/>
+        // 4
+        <CheckBox android:id="@+id/checkbox_bh4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh4"
+            android:onClick="onCheckboxClicked"/>
+       // 5
+        <CheckBox android:id="@+id/checkbox_bh5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh5"
+            android:onClick="onCheckboxClicked"/>
+            // 6
+        <CheckBox android:id="@+id/checkbox_bh6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh6"
+            android:onClick="onCheckboxClicked"/>
+            // 7
+        <CheckBox android:id="@+id/checkbox_bh7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh7"
+            android:onClick="onCheckboxClicked"/>
+            // 8
+        <CheckBox android:id="@+id/checkbox_bh8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh8"
+            android:onClick="onCheckboxClicked"/>
+            // 9
+        <CheckBox android:id="@+id/checkbox_bh9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh9"
+            android:onClick="onCheckboxClicked"/>
+            // 10
+        <CheckBox android:id="@+id/checkbox_bh10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh10"
+            android:onClick="onCheckboxClicked"/>
+            // 11
+        <CheckBox android:id="@+id/checkbox_bh11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh11"
+            android:onClick="onCheckboxClicked"/>
+            // 12
+        <CheckBox android:id="@+id/checkbox_bh12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh12"
+            android:onClick="onCheckboxClicked"/>
+            // 13
+        <CheckBox android:id="@+id/checkbox_bh13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh13"
+            android:onClick="onCheckboxClicked"/>
+            // 14
+        <CheckBox android:id="@+id/checkbox_bh14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh14"
+            android:onClick="onCheckboxClicked"/>
+       // 15
+        <CheckBox android:id="@+id/checkbox_bh15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh15"
+            android:onClick="onCheckboxClicked"/>
+        // 16
+        <CheckBox android:id="@+id/checkbox_bh16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh16"
+            android:onClick="onCheckboxClicked"/>
+        // 17
+        <CheckBox android:id="@+id/checkbox_bh17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh17"
+            android:onClick="onCheckboxClicked"/>
+            // 18
+        <CheckBox android:id="@+id/checkbox_bh18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bh18"
+            android:onClick="onCheckboxClicked"/>
         
-        
-        // drop-down for setting
+        // drop-down for behavior setting
         <LinearLayout android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
@@ -95,28 +178,208 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="wrap_content"
             android:text="@string/location" />
         <Spinner
-            android:id="@+id/settings_spinner"
+            android:id="@+id/behavior_settings_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/settings_array" />
             
-        </LinearLayout>
-
-        // drop-down for suggested strategies
+        </LinearLayout>    
+            
+        // checkboxes for academic report
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a_report" />
+            
+                    // 1
+        <CheckBox android:id="@+id/a1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a1"
+            android:onClick="onCheckboxClicked"/>
+                        // 2
+        <CheckBox android:id="@+id/a2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a2"
+            android:onClick="onCheckboxClicked"/>
+                        // 3
+        <CheckBox android:id="@+id/checkbox_a3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a3"
+            android:onClick="onCheckboxClicked"/>
+                        // 4
+        <CheckBox android:id="@+id/checkbox_a4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a4"
+            android:onClick="onCheckboxClicked"/>
+                        // 5
+        <CheckBox android:id="@+id/checkbox_a5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a5"
+            android:onClick="onCheckboxClicked"/>
+                        // 6
+        <CheckBox android:id="@+id/checkbox_a6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a6"
+            android:onClick="onCheckboxClicked"/>
+                        // 7
+        <CheckBox android:id="@+id/checkbox_a7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a7"
+            android:onClick="onCheckboxClicked"/>
+                        // 8
+        <CheckBox android:id="@+id/checkbox_a8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a8"
+            android:onClick="onCheckboxClicked"/>
+                        // 9
+        <CheckBox android:id="@+id/checkbox_a9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a9"
+            android:onClick="onCheckboxClicked"/>
+                        // 10
+        <CheckBox android:id="@+id/checkbox_a10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a10"
+            android:onClick="onCheckboxClicked"/>
+                        // 11
+        <CheckBox android:id="@+id/checkbox_a11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a11"
+            android:onClick="onCheckboxClicked"/>
+                        // 12
+        <CheckBox android:id="@+id/checkbox_a12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a12"
+            android:onClick="onCheckboxClicked"/>
+                        // 13
+        <CheckBox android:id="@+id/checkbox_a13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/a13"
+            android:onClick="onCheckboxClicked"/>
+                
+            
+        
+        
+        // drop-down for academic setting
         <LinearLayout android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
             
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strategies" />
+            android:text="@string/location" />
         <Spinner
-            android:id="@+id/strategy_spinner"
+            android:id="@+id/academic_settings_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/strategy_array" />
+            android:entries="@array/settings_array" />
             
         </LinearLayout>
+
+        // checkboxes for suggested strategies
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strategies" />
+                       // 1
+        <CheckBox android:id="@+id/checkbox_strat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat1"
+            android:onClick="onCheckboxClicked"/>
+                            // 2
+        <CheckBox android:id="@+id/checkbox_strat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat2"
+            android:onClick="onCheckboxClicked"/>
+                            // 3
+        <CheckBox android:id="@+id/checkbox_strat3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat3"
+            android:onClick="onCheckboxClicked"/>
+                            // 4
+        <CheckBox android:id="@+id/checkbox_strat4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat4"
+            android:onClick="onCheckboxClicked"/>
+                            // 5
+        <CheckBox android:id="@+id/checkbox_strat5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat5"
+            android:onClick="onCheckboxClicked"/>
+                            // 6
+        <CheckBox android:id="@+id/checkbox_strat6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat6"
+            android:onClick="onCheckboxClicked"/>
+                            // 7
+        <CheckBox android:id="@+id/checkbox_strat7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat7"
+            android:onClick="onCheckboxClicked"/>
+                            // 8
+        <CheckBox android:id="@+id/checkbox_strat8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat8"
+            android:onClick="onCheckboxClicked"/>
+                            // 9
+        <CheckBox android:id="@+id/checkbox_strat9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat9"
+            android:onClick="onCheckboxClicked"/>
+                            // 10
+        <CheckBox android:id="@+id/checkbox_strat10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat10"
+            android:onClick="onCheckboxClicked"/>
+                            // 11
+        <CheckBox android:id="@+id/checkbox_strat11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat11"
+            android:onClick="onCheckboxClicked"/>
+                            // 12
+        <CheckBox android:id="@+id/checkbox_strat12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat12"
+            android:onClick="onCheckboxClicked"/>
+                            // 13
+        <CheckBox android:id="@+id/checkbox_strat13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat13"
+            android:onClick="onCheckboxClicked"/>
+                            // 14
+        <CheckBox android:id="@+id/checkbox_strat14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strat14"
+            android:onClick="onCheckboxClicked"/>
+        
+            
+            
         
         <Button
         android:id="@+id/submit_report_button"
@@ -125,3 +388,4 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         android:text="Submit Report" />
         
     </LinearLayout>
+</ScrollView>

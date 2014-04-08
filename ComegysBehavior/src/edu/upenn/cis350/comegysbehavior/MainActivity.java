@@ -189,7 +189,7 @@ public class MainActivity extends FragmentActivity implements
 		public BehaviorFragment() {
 		}
 		
-		private Spinner strategy_spinner, settings_spinner, behavior_spinner, academic_spinner, grade_spinner;
+		private Spinner academic_settings_spinner, behavior_settings_spinner, grade_spinner;
 		private EditText student_name;
 		private DatePicker date;
 		
@@ -219,6 +219,7 @@ public class MainActivity extends FragmentActivity implements
 	            	 calendar.set(year, month, day);
 	            	 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
 	            	 String dateOfInfraction = sdf.format(calendar.getTime());
+	            	/*
 	            	 String strategyInput = strategy_spinner.getSelectedItem().toString();
 	            	 String settingsInput = settings_spinner.getSelectedItem().toString();
 	            	 String behaviorInput = behavior_spinner.getSelectedItem().toString();
@@ -234,6 +235,7 @@ public class MainActivity extends FragmentActivity implements
 	            	 gameScore.put("behaviorInput", behaviorInput);
 	            	 gameScore.put("academicInput", academicInput);
 	            	 gameScore.saveInBackground();
+	            	 */
 	             }
 	         });
 			
@@ -241,10 +243,8 @@ public class MainActivity extends FragmentActivity implements
 		}
 		private void setSpinnerContent( View view )
 		{
-		  strategy_spinner = (Spinner) view.findViewById( R.id.strategy_spinner );
-		  settings_spinner = (Spinner) view.findViewById( R.id.settings_spinner );
-		  behavior_spinner = (Spinner) view.findViewById( R.id.behavior_spinner);
-		  academic_spinner = (Spinner) view.findViewById( R.id.academic_spinner); 
+		  behavior_settings_spinner = (Spinner) view.findViewById( R.id.behavior_settings_spinner );
+		  academic_settings_spinner = (Spinner) view.findViewById( R.id.academic_settings_spinner); 
 		  grade_spinner = (Spinner) view.findViewById( R.id.grade_spinner);
 		 }
 		

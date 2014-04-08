@@ -14,22 +14,22 @@
     <string name="strategies">Strategies / Interventions Used By Staff</string>
     <string name="location">Setting</string>
     
-    <string-array name="strategy_array">
-        <item>Planned ignoring (differential attention)</item>
-        <item>Behavior log (stars &amp; checks)</item>
-        <item>Re-teach/review expectations</item>
-        <item>Restorative action</item>
-        <item>Apology (verbal and/or written)</item>
-        <item>Scholar pairing/buddy time-out</item>
-        <item>Time-out</item>
-        <item>Age-appropriate writing activity</item>
-        <item>Behavior processing form</item>
-        <item>Teacher/scholar conversation outside classroom</item>
-        <item>Conversation with family</item>
-        <item>Conference</item>
-        <item>Loss of privileges</item>
-        <item>Other</item>
-        </string-array>
+    
+        <string name="strat1">Planned ignoring (differential attention)</string>
+        <string name="strat2">Behavior log (stars &amp; checks)</string>
+        <string name="strat3">Re-teach/review expectations</string>
+        <string name="strat4">Restorative action</string>
+        <string name="strat5">Apology (verbal and/or written)</string>
+        <string name="strat6">Scholar pairing/buddy time-out</string>
+        <string name="strat7">Time-out</string>
+        <string name="strat8">Age-appropriate writing activity</string>
+        <string name="strat9">Behavior processing form</string>
+        <string name="strat10">Teacher/scholar conversation outside classroom</string>
+        <string name="strat11">Conversation with family</string>
+        <string name="strat12">Conference</string>
+        <string name="strat13">Loss of privileges</string>
+        <string name="strat14">Other</string>
+        
         
     <string-array name="settings_array">
            <item>classroom</item>
@@ -44,42 +44,41 @@
         <item>Academic Report</item>
     </string-array>
     
-    <string-array name="behavior_array">
-        <item>Respect for self &amp; others</item>
-        <item>Following directions</item>
-        <item>Positive conflict resolution</item>
-        <item>Peer mediation</item>
-        <item>Helping peer / staff</item>
-        <item>Leadership</item>
-        <item>Dealing with adversity positively</item>
-        <item>Going above and beyond</item>
-        <item>Refusal to follow directions and/or participate</item>
-        <item>Disruption of class / activity / etc</item>
-        <item>Disrespect / disregard of staff / scholars</item>
-        <item>Inappropriate language / gestures</item>
-        <item>Inappropriate physical contact / fighting / violence</item>
-        <item>Teasing / instigating arguments or conflict</item>
-        <item>Running in hallway / common spaces</item>
-        <item>Leaving supervision / class / grounds unattended</item>
-        <item>Failure to follow program / school rules</item>
-        <item>Other</item>
-    </string-array>
+            <string name="bh1">Respect for self &amp; others</string>
+        <string name="bh2">Following directions</string>
+        <string name="bh3">Positive conflict resolution</string>
+        <string name="bh4">Peer mediation</string>
+        <string name="bh5">Helping peer / staff</string>
+        <string name="bh6">Leadership</string>
+        <string name="bh7">Dealing with adversity positively</string>
+        <string name="bh8">Going above and beyond</string>
+        <string name="bh9">Refusal to follow directions and/or participate</string>
+        <string name="bh10">Disruption of class / activity / etc</string>
+        <string name="bh11">Disrespect / disregard of staff / scholars</string>
+        <string name="bh12">Inappropriate language / gestures</string>
+        <string name="bh13">Inappropriate physical contact / fighting / violence</string>
+        <string name="bh14">Teasing / instigating arguments or conflict</string>
+        <string name="bh15">Running in hallway / common spaces</string>
+        <string name="bh16">Leaving supervision / class / grounds unattended</string>
+        <string name="bh17">Failure to follow program / school rules</string>
+        <string name="bh18">Other</string>
+        
+     
+        <string name="a1">Respects learning for self &amp; others</string>
+        <string name="a2">Follows directions</string>
+        <string name="a3">Consistently prepared and organized</string>
+        <string name="a4">Completes homework / assignments</string>
+        <string name="a5">Stays on task</string>
+        <string name="a6">Peer tutoring (give or receive)</string>
+        <string name="a7">Struggles with:</string>
+        <string name="a8">Disruption of class / lesson / activity</string>
+        <string name="a9">Refusal to follow directions and/or participate</string>
+        <string name="a10">Unprepared / disorganized</string>
+        <string name="a11">Failure to complete homework / assignment</string>
+        <string name="a12">Questionable academic integrity</string>
+        <string name="a13">Other</string>        
     
-    <string-array name="academic_array">
-        <item>Respects learning for self &amp; others</item>
-        <item>Follows directions</item>
-        <item>Consistently prepared and organized</item>
-        <item>Completes homework / assignments</item>
-        <item>Stays on task</item>
-        <item>Peer tutoring (give or receive)</item>
-        <item>Struggles with:</item>
-        <item>Disruption of class / lesson / activity</item>
-        <item>Refusal to follow directions and/or participate</item>
-        <item>Unprepared / disorganized</item>
-        <item>Failure to complete homework / assignment</item>
-        <item>Questionable academic integrity</item>
-        <item>Other</item>        
-    </string-array>
+        
     
     <string-array name="grade_array">
         <item >1st</item>
