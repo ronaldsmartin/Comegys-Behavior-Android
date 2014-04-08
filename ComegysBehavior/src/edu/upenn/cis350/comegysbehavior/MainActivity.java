@@ -1,5 +1,7 @@
 package edu.upenn.cis350.comegysbehavior;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 import android.app.ActionBar;
@@ -11,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -20,11 +23,15 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.parse.Parse;
 import com.parse.ParseAnalytics;
+import com.parse.ParseObject;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -182,7 +189,9 @@ public class MainActivity extends FragmentActivity implements
 		public BehaviorFragment() {
 		}
 		
-		private Spinner strategy_spinner, settings_spinner, behavior_spinner, academic_spinner;
+		private Spinner strategy_spinner, settings_spinner, behavior_spinner, academic_spinner, grade_spinner;
+		private EditText student_name;
+		private DatePicker date;
 		
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -190,6 +199,43 @@ public class MainActivity extends FragmentActivity implements
 			View rootView = inflater.inflate(R.layout.report,
 					container, false);
 			setSpinnerContent(rootView);
+			
+			student_name = (EditText) rootView.findViewById(R.id.scholar_name);
+			//student_grade = (EditText) rootView.findViewById(R.id.grade);
+			//date = (EditText) rootView.findViewById(R.id.date);
+			date = (DatePicker) rootView.findViewById(R.id.SelectDate);
+			
+			final Button button = (Button) rootView.findViewById(R.id.submit_report_button);
+	         button.setOnClickListener(new View.OnClickListener() {
+	             public void onClick(View v) {
+	            	 Log.d("DAS BUTTON", "WORKS");
+	            	 String studentName = student_name.getText().toString();
+	            	 String studentGrade = grade_spinner.getSelectedItem().toString();
+	            	 int day = date.getDayOfMonth();
+	            	 int month = date.getMonth();
+	            	 int year =  date.getYear();
+
+	            	 Calendar calendar = Calendar.getInstance();
+	            	 calendar.set(year, month, day);
+	            	 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+	            	 String dateOfInfraction = sdf.format(calendar.getTime());
+	            	 String strategyInput = strategy_spinner.getSelectedItem().toString();
+	            	 String settingsInput = settings_spinner.getSelectedItem().toString();
+	            	 String behaviorInput = behavior_spinner.getSelectedItem().toString();
+	            	 String academicInput = academic_spinner.getSelectedItem().toString();
+	            	 //Log.d("DAS BUTTON", strategyInput);
+	            	 
+	            	 ParseObject gameScore = new ParseObject("Report");
+	            	 gameScore.put("studentName", studentName);
+	            	 gameScore.put("studentGrade", studentGrade);
+	            	 gameScore.put("date", dateOfInfraction);
+	            	 gameScore.put("strategyInput", strategyInput);
+	            	 gameScore.put("settingsInput", settingsInput);
+	            	 gameScore.put("behaviorInput", behaviorInput);
+	            	 gameScore.put("academicInput", academicInput);
+	            	 gameScore.saveInBackground();
+	             }
+	         });
 			
 			return rootView;
 		}
@@ -199,7 +245,10 @@ public class MainActivity extends FragmentActivity implements
 		  settings_spinner = (Spinner) view.findViewById( R.id.settings_spinner );
 		  behavior_spinner = (Spinner) view.findViewById( R.id.behavior_spinner);
 		  academic_spinner = (Spinner) view.findViewById( R.id.academic_spinner); 
+		  grade_spinner = (Spinner) view.findViewById( R.id.grade_spinner);
 		 }
+		
+	
 		
 		
 	}	
