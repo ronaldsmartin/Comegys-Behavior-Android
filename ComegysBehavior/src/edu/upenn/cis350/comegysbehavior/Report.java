@@ -12,68 +12,68 @@ import com.parse.ParseObject;
 public class Report {
 	
 	// Subject Info
-	public String studentName;
-	public String studentGrade;
-	public String reportCreatedDate;
+	public String studentName = "";
+	public String studentGrade = "";
+	public String reportCreatedDate = "";
 	
 	/* BEHAVIOR REPORT */
 	
 	// Behavior Report - Positive
-	public boolean behavior_respectForSelfAndOthers;
-	public boolean behavior_followingDirections;
-	public boolean behavior_positiveConflictResolution;
-	public boolean behavior_peerMediation;
-	public boolean behavior_helpingPeerOrStaff;
-	public boolean behavior_leadership;
-	public boolean behavior_dealingWithAdversityPositively;
-	public boolean behavior_goingAboveAndBeyond;
-	
+	public boolean behavior_respectForSelfAndOthers = false;
+	public boolean behavior_followingDirections = false;
+	public boolean behavior_positiveConflictResolution = false;
+	public boolean behavior_peerMediation = false;
+	public boolean behavior_helpingPeerOrStaff = false;
+	public boolean behavior_leadership = false;
+	public boolean behavior_dealingWithAdversityPositively = false;
+	public boolean behavior_goingAboveAndBeyond = false;
+	  
 	// Behavior Report - Negative
-	public boolean behavior_refusalToFollowDirectionsOrParticipate;
-	public boolean behavior_disruptionOfClassOrActivity;
-	public boolean behavior_disrespectOfStaffOrScholars;
-	public boolean behavior_inappropriateLanguageOrGestures;
-	public boolean behavior_inappropriatePhysicalContactOrFighting;
-	public boolean behavior_teasingOrInstigatingConflict;
-	public boolean behavior_runningInCommonSpaces;
-	public boolean behavior_leavingSupervisionUnattended;
-	public boolean behavior_failingToFollowRules;
+	public boolean behavior_refusalToFollowDirectionsOrParticipate = false;
+	public boolean behavior_disruptionOfClassOrActivity = false;
+	public boolean behavior_disrespectOfStaffOrScholars = false;
+	public boolean behavior_inappropriateLanguageOrGestures = false;
+	public boolean behavior_inappropriatePhysicalContactOrFighting = false;
+	public boolean behavior_teasingOrInstigatingConflict = false;
+	public boolean behavior_runningInCommonSpaces = false;
+	public boolean behavior_leavingSupervisionUnattended = false;
+	public boolean behavior_failingToFollowRules = false;
 	
-	public String behaviorSetting;
+	public String behaviorSetting = "";
 	
 	/* ACADEMIC REPORT */
-	public boolean academic_respectsLearningForSelfAndOthers;
-	public boolean academic_followsDirections;
-	public boolean academic_consistentlyPreparedAndOrganized;
-	public boolean academic_completesHomeworkAndAssignments;
-	public boolean academic_staysOnTask;
-	public boolean academic_peerTutoring;
-	public boolean academic_struggles;
-	public boolean academic_disruptionOfClassLessonActivity;
-	public boolean academic_refusalToFollowDirectionsAndParticipate;
-	public boolean academic_unPreparedAndDisorganized;
-	public boolean academic_failureToCompleteHomeworkAssignment;
-	public boolean academic_questionableAcademicIntegrity;
-	public boolean academic_other;
-	
-	/* STRATEGY REPORT */
-	public boolean strategy_plannedIgnoring;
-	public boolean strategy_behaviorLog;
-	public boolean strategy_reteachReviewExpectations;
-	public boolean strategy_restorativeAction;
-	public boolean strategy_apologyVerbalAndOrWritten;
-	public boolean strategy_scholarPairingTimeOut;
-	public boolean strategy_timeOut;
-	public boolean strategy_ageAppropriateWritingActivity;
-	public boolean strategy_behaviorProcessingForm;
-	public boolean strategy_teacherScholarConversationOutsideClassroom;
-	public boolean strategy_conversationWithFamily;
-	public boolean strategy_conference;
-	public boolean strategy_lossOfPriveleges;
-	public boolean strategy_other;
+	public boolean academic_respectsLearningForSelfAndOthers = false;
+	public boolean academic_followsDirections = false;
+	public boolean academic_consistentlyPreparedAndOrganized = false;
+	public boolean academic_completesHomeworkAndAssignments = false;
+	public boolean academic_staysOnTask = false;
+	public boolean academic_peerTutoring = false;
+	public boolean academic_struggles = false;
+	public boolean academic_disruptionOfClassLessonActivity = false;
+	public boolean academic_refusalToFollowDirectionsAndParticipate = false;
+	public boolean academic_unPreparedAndDisorganized = false;
+	public boolean academic_failureToCompleteHomeworkAssignment = false;
+	public boolean academic_questionableAcademicIntegrity = false;
+	public boolean academic_other = false;
 
-	public String academicSetting;
-	public String reportDetailsAndComments;
+	/* STRATEGY REPORT */
+	public boolean strategy_plannedIgnoring = false;
+	public boolean strategy_behaviorLog = false;
+	public boolean strategy_reteachReviewExpectations = false;
+	public boolean strategy_restorativeAction = false;
+	public boolean strategy_apologyVerbalAndOrWritten = false;
+	public boolean strategy_scholarPairingTimeOut = false;
+	public boolean strategy_timeOut = false;
+	public boolean strategy_ageAppropriateWritingActivity = false;
+	public boolean strategy_behaviorProcessingForm = false;
+	public boolean strategy_teacherScholarConversationOutsideClassroom = false;
+	public boolean strategy_conversationWithFamily = false;
+	public boolean strategy_conference = false;
+	public boolean strategy_lossOfPriveleges = false;
+	public boolean strategy_other = false;
+
+	public String academicSetting = "";
+	public String reportDetailsAndComments = "";
 	
 	/**
 	 * 
