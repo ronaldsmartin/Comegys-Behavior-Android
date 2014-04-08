@@ -22,38 +22,33 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </LinearLayout>
         
         
-        // grade
+        // drop-down for grade
         <LinearLayout android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
-        
+            
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/grade" />
-        
-        <EditText android:id="@+id/grade"
+        <Spinner
+            android:id="@+id/grade_spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:entries="@array/grade_array" />
             
         </LinearLayout>
         
         
         // date
-        <LinearLayout android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+        <DatePicker 
+        android:id="@+id/SelectDate"
+        android:layout_marginTop="10dp"  
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:calendarViewShown="false">
         
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/date" />
-        
-        <EditText android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>       
-              
-        </LinearLayout>
+    </DatePicker>
         
         
         // drop-down for behavior report
@@ -122,5 +117,11 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:entries="@array/strategy_array" />
             
         </LinearLayout>
+        
+        <Button
+        android:id="@+id/submit_report_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit Report" />
         
     </LinearLayout>
