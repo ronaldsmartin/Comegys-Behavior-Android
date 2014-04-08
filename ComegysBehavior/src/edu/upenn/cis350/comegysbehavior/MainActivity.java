@@ -46,6 +46,8 @@ public class MainActivity extends FragmentActivity implements
 	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
 	 */
 	SectionsPagerAdapter mSectionsPagerAdapter;
+	
+	static Report report;
 
 	/**
 	 * The {@link ViewPager} that will host the section contents.
@@ -59,6 +61,8 @@ public class MainActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		report = new Report();
 		
 		// Initialize Parse
 		Parse.initialize(this, "Q60Xc0o3UZOBLeB8mO83gX19LNV25xwr4LtaX34n", "o4JPB1gTW3Vov6UASIRMeuqVeB0Kg6uwy2G3ufXs");
@@ -211,7 +215,9 @@ public class MainActivity extends FragmentActivity implements
 	             public void onClick(View v) {
 	            	 Log.d("DAS BUTTON", "WORKS");
 	            	 String studentName = student_name.getText().toString();
+	            	 report.studentName = studentName;
 	            	 String studentGrade = grade_spinner.getSelectedItem().toString();
+	            	 report.studentGrade = studentGrade;
 	            	 int day = date.getDayOfMonth();
 	            	 int month = date.getMonth();
 	            	 int year =  date.getYear();
@@ -260,93 +266,144 @@ public class MainActivity extends FragmentActivity implements
 	    
 	    // Check which checkbox was clicked
 	    switch(view.getId()) {
-	        case R.id.checkbox_bh1:
+	        case R.id.checkbox_behavior_respectForSelfAndOthers:
 	            if (checked)
+	            	report.behavior_respectForSelfAndOthers = true;
+	            else
+	            	report.behavior_respectForSelfAndOthers = false;
+	            break;
+	        case R.id.checkbox_behavior_followingDirections:
+	        	if (checked)
+	            	report.behavior_followingDirections = true;
+	            else
+	            	report.behavior_followingDirections = false;    
 
 	            break;
-	        case R.id.checkbox_bh2:
+	        case R.id.checkbox_behavior_positiveConflictResolution:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_positiveConflictResolution = true;
+	            else
+	            	report.behavior_positiveConflictResolution = false;  
 
 	            break;
-	        case R.id.checkbox_bh3:
+	        case R.id.checkbox_behavior_peerMediation:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_peerMediation = true;
+	            else
+	            	report.behavior_peerMediation = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh4:
+	        case R.id.checkbox_behavior_helpingPeerOrStaff:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_helpingPeerOrStaff = true;
+	            else
+	            	report.behavior_helpingPeerOrStaff = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh5:
+	        case R.id.checkbox_behavior_leadership:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_leadership = true;
+	            else
+	            	report.behavior_leadership = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh6:
+	        case R.id.checkbox_behavior_dealingWithAdversityPositively:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_dealingWithAdversityPositively = true;
+	            else
+	            	report.behavior_dealingWithAdversityPositively = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh7:
+	        case R.id.checkbox_behavior_goingAboveAndBeyond:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_goingAboveAndBeyond = true;
+	            else
+	            	report.behavior_goingAboveAndBeyond = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh8:
+	        case R.id.checkbox_behavior_refusalToFollowDirectionsOrParticipate:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_refusalToFollowDirectionsOrParticipate = true;
+	            else
+	            	report.behavior_refusalToFollowDirectionsOrParticipate = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh9:
+	        case R.id.checkbox_behavior_disruptionOfClassOrActivity:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_disruptionOfClassOrActivity = true;
+	            else
+	            	report.behavior_disruptionOfClassOrActivity = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh10:
+	        case R.id.checkbox_behavior_disrespectOfStaffOrScholars:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_disrespectOfStaffOrScholars = true;
+	            else
+	            	report.behavior_disrespectOfStaffOrScholars = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh11:
+	        case R.id.checkbox_behavior_inappropriateLanguageOrGestures:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_inappropriateLanguageOrGestures = true;
+	            else
+	            	report.behavior_inappropriateLanguageOrGestures = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh12:
+	        case R.id.checkbox_behavior_inappropriatePhysicalContactOrFighting:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_inappropriatePhysicalContactOrFighting = true;
+	            else
+	            	report.behavior_inappropriatePhysicalContactOrFighting = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh13:
+	        case R.id.checkbox_behavior_teasingOrInstigatingConflict:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_teasingOrInstigatingConflict = true;
+	            else
+	            	report.behavior_teasingOrInstigatingConflict = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh14:
+	        case R.id.checkbox_behavior_runningInCommonSpaces:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_runningInCommonSpaces = true;
+	            else
+	            	report.behavior_runningInCommonSpaces = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh15:
+	        case R.id.checkbox_behavior_leavingSupervisionUnattended:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_leavingSupervisionUnattended = true;
+	            else
+	            	report.behavior_leavingSupervisionUnattended = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh16:
+	        case R.id.checkbox_behavior_failingToFollowRules:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_failingToFollowRules = true;
+	            else
+	            	report.behavior_failingToFollowRules = false;  
+
 
 	            break;
-	        case R.id.checkbox_bh17:
+	        case R.id.checkbox_behavior_other:
 	            if (checked)
-	                // Cheese me
+	            	report.behavior_other = true;
+	            else
+	            	report.behavior_other = false;  
 
-	            break;
-	        case R.id.checkbox_bh18:
-	            if (checked)
-	                // Cheese me
 
 	            break;
 	    }
