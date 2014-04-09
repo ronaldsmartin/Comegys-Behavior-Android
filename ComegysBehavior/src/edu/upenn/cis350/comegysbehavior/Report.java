@@ -39,6 +39,8 @@ public class Report {
 	public boolean behavior_leavingSupervisionUnattended = false;
 	public boolean behavior_failingToFollowRules = false;
 	
+	public boolean behavior_other = false; 
+	
 	public String behaviorSetting = "";
 	
 	/* ACADEMIC REPORT */

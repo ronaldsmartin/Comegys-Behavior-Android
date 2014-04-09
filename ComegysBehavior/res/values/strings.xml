@@ -15,20 +15,20 @@
     <string name="location">Setting</string>
     
     
-        <string name="strat1">Planned ignoring (differential attention)</string>
-        <string name="strat2">Behavior log (stars &amp; checks)</string>
-        <string name="strat3">Re-teach/review expectations</string>
-        <string name="strat4">Restorative action</string>
-        <string name="strat5">Apology (verbal and/or written)</string>
-        <string name="strat6">Scholar pairing/buddy time-out</string>
-        <string name="strat7">Time-out</string>
-        <string name="strat8">Age-appropriate writing activity</string>
-        <string name="strat9">Behavior processing form</string>
-        <string name="strat10">Teacher/scholar conversation outside classroom</string>
-        <string name="strat11">Conversation with family</string>
-        <string name="strat12">Conference</string>
-        <string name="strat13">Loss of privileges</string>
-        <string name="strat14">Other</string>
+        <string name="strategy_plannedIgnoring">Planned ignoring (differential attention)</string>
+        <string name="strategy_behaviorLog">Behavior log (stars &amp; checks)</string>
+        <string name="strategy_reteachReviewExpectations">Re-teach/review expectations</string>
+        <string name="strategy_restorativeAction">Restorative action</string>
+        <string name="strategy_apologyVerbalAndOrWritten">Apology (verbal and/or written)</string>
+        <string name="strategy_scholarPairingTimeOut">Scholar pairing/buddy time-out</string>
+        <string name="strategy_timeOut">Time-out</string>
+        <string name="strategy_ageAppropriateWritingActivity">Age-appropriate writing activity</string>
+        <string name="strategy_behaviorProcessingForm">Behavior processing form</string>
+        <string name="strategy_teacherScholarConversationOutsideClassroom">Teacher/scholar conversation outside classroom</string>
+        <string name="strategy_conversationWithFamily">Conversation with family</string>
+        <string name="strategy_conference">Conference</string>
+        <string name="strategy_lossOfPriveleges">Loss of privileges</string>
+        <string name="strategy_other">Other</string>
         
         
     <string-array name="settings_array">
@@ -44,39 +44,39 @@
         <item>Academic Report</item>
     </string-array>
     
-            <string name="bh1">Respect for self &amp; others</string>
-        <string name="bh2">Following directions</string>
-        <string name="bh3">Positive conflict resolution</string>
-        <string name="bh4">Peer mediation</string>
-        <string name="bh5">Helping peer / staff</string>
-        <string name="bh6">Leadership</string>
-        <string name="bh7">Dealing with adversity positively</string>
-        <string name="bh8">Going above and beyond</string>
-        <string name="bh9">Refusal to follow directions and/or participate</string>
-        <string name="bh10">Disruption of class / activity / etc</string>
-        <string name="bh11">Disrespect / disregard of staff / scholars</string>
-        <string name="bh12">Inappropriate language / gestures</string>
-        <string name="bh13">Inappropriate physical contact / fighting / violence</string>
-        <string name="bh14">Teasing / instigating arguments or conflict</string>
-        <string name="bh15">Running in hallway / common spaces</string>
-        <string name="bh16">Leaving supervision / class / grounds unattended</string>
-        <string name="bh17">Failure to follow program / school rules</string>
-        <string name="bh18">Other</string>
+            <string name="behavior_respectForSelfAndOthers">Respect for self &amp; others</string>
+        <string name="behavior_followingDirections">Following directions</string>
+        <string name="behavior_positiveConflictResolution">Positive conflict resolution</string>
+        <string name="behavior_peerMediation">Peer mediation</string>
+        <string name="behavior_helpingPeerOrStaff">Helping peer / staff</string>
+        <string name="behavior_leadership">Leadership</string>
+        <string name="behavior_dealingWithAdversityPositively">Dealing with adversity positively</string>
+        <string name="behavior_goingAboveAndBeyond">Going above and beyond</string>
+        <string name="behavior_refusalToFollowDirectionsOrParticipate">Refusal to follow directions and/or participate</string>
+        <string name="behavior_disruptionOfClassOrActivity">Disruption of class / activity / etc</string>
+        <string name="behavior_disrespectOfStaffOrScholars">Disrespect / disregard of staff / scholars</string>
+        <string name="behavior_inappropriateLanguageOrGestures">Inappropriate language / gestures</string>
+        <string name="behavior_inappropriatePhysicalContactOrFighting">Inappropriate physical contact / fighting / violence</string>
+        <string name="behavior_teasingOrInstigatingConflict">Teasing / instigating arguments or conflict</string>
+        <string name="behavior_runningInCommonSpaces">Running in hallway / common spaces</string>
+        <string name="behavior_leavingSupervisionUnattended">Leaving supervision / class / grounds unattended</string>
+        <string name="behavior_failingToFollowRules">Failure to follow program / school rules</string>
+        <string name="behavior_other">Other</string>
         
      
-        <string name="a1">Respects learning for self &amp; others</string>
-        <string name="a2">Follows directions</string>
-        <string name="a3">Consistently prepared and organized</string>
-        <string name="a4">Completes homework / assignments</string>
-        <string name="a5">Stays on task</string>
-        <string name="a6">Peer tutoring (give or receive)</string>
-        <string name="a7">Struggles with:</string>
-        <string name="a8">Disruption of class / lesson / activity</string>
-        <string name="a9">Refusal to follow directions and/or participate</string>
-        <string name="a10">Unprepared / disorganized</string>
-        <string name="a11">Failure to complete homework / assignment</string>
-        <string name="a12">Questionable academic integrity</string>
-        <string name="a13">Other</string>        
+        <string name="academic_respectsLearningForSelfAndOthers">Respects learning for self &amp; others</string>
+        <string name="academic_followsDirections">Follows directions</string>
+        <string name="academic_consistentlyPreparedAndOrganized">Consistently prepared and organized</string>
+        <string name="academic_completesHomeworkAndAssignments">Completes homework / assignments</string>
+        <string name="academic_staysOnTask">Stays on task</string>
+        <string name="academic_peerTutoring">Peer tutoring (give or receive)</string>
+        <string name="academic_struggles">Struggles with:</string>
+        <string name="academic_disruptionOfClassLessonActivity">Disruption of class / lesson / activity</string>
+        <string name="academic_refusalToFollowDirectionsAndParticipate">Refusal to follow directions and/or participate</string>
+        <string name="academic_unPreparedAndDisorganized">Unprepared / disorganized</string>
+        <string name="academic_failureToCompleteHomeworkAssignment">Failure to complete homework / assignment</string>
+        <string name="academic_questionableAcademicIntegrity">Questionable academic integrity</string>
+        <string name="academic_other">Other</string>        
     
         
     

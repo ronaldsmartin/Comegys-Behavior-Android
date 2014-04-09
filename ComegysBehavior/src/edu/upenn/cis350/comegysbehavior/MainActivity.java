@@ -272,140 +272,311 @@ public class MainActivity extends FragmentActivity implements
 	            else
 	            	report.behavior_respectForSelfAndOthers = false;
 	            break;
+	            
 	        case R.id.checkbox_behavior_followingDirections:
 	        	if (checked)
 	            	report.behavior_followingDirections = true;
 	            else
 	            	report.behavior_followingDirections = false;    
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_positiveConflictResolution:
 	            if (checked)
 	            	report.behavior_positiveConflictResolution = true;
 	            else
-	            	report.behavior_positiveConflictResolution = false;  
-
+	            	report.behavior_positiveConflictResolution = false; 
 	            break;
+	            
 	        case R.id.checkbox_behavior_peerMediation:
 	            if (checked)
 	            	report.behavior_peerMediation = true;
 	            else
 	            	report.behavior_peerMediation = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_helpingPeerOrStaff:
 	            if (checked)
 	            	report.behavior_helpingPeerOrStaff = true;
 	            else
 	            	report.behavior_helpingPeerOrStaff = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_leadership:
 	            if (checked)
 	            	report.behavior_leadership = true;
 	            else
 	            	report.behavior_leadership = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_dealingWithAdversityPositively:
 	            if (checked)
 	            	report.behavior_dealingWithAdversityPositively = true;
 	            else
 	            	report.behavior_dealingWithAdversityPositively = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_goingAboveAndBeyond:
 	            if (checked)
 	            	report.behavior_goingAboveAndBeyond = true;
 	            else
 	            	report.behavior_goingAboveAndBeyond = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_refusalToFollowDirectionsOrParticipate:
 	            if (checked)
 	            	report.behavior_refusalToFollowDirectionsOrParticipate = true;
 	            else
 	            	report.behavior_refusalToFollowDirectionsOrParticipate = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_disruptionOfClassOrActivity:
 	            if (checked)
 	            	report.behavior_disruptionOfClassOrActivity = true;
 	            else
 	            	report.behavior_disruptionOfClassOrActivity = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_disrespectOfStaffOrScholars:
 	            if (checked)
 	            	report.behavior_disrespectOfStaffOrScholars = true;
 	            else
 	            	report.behavior_disrespectOfStaffOrScholars = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_inappropriateLanguageOrGestures:
 	            if (checked)
 	            	report.behavior_inappropriateLanguageOrGestures = true;
 	            else
 	            	report.behavior_inappropriateLanguageOrGestures = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_inappropriatePhysicalContactOrFighting:
 	            if (checked)
 	            	report.behavior_inappropriatePhysicalContactOrFighting = true;
 	            else
 	            	report.behavior_inappropriatePhysicalContactOrFighting = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_teasingOrInstigatingConflict:
 	            if (checked)
 	            	report.behavior_teasingOrInstigatingConflict = true;
 	            else
 	            	report.behavior_teasingOrInstigatingConflict = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_runningInCommonSpaces:
 	            if (checked)
 	            	report.behavior_runningInCommonSpaces = true;
 	            else
 	            	report.behavior_runningInCommonSpaces = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_leavingSupervisionUnattended:
 	            if (checked)
 	            	report.behavior_leavingSupervisionUnattended = true;
 	            else
 	            	report.behavior_leavingSupervisionUnattended = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_failingToFollowRules:
 	            if (checked)
 	            	report.behavior_failingToFollowRules = true;
 	            else
 	            	report.behavior_failingToFollowRules = false;  
-
-
 	            break;
+	            
 	        case R.id.checkbox_behavior_other:
 	            if (checked)
 	            	report.behavior_other = true;
 	            else
 	            	report.behavior_other = false;  
-
-
 	            break;
+	        
+	            // academic
+	        case R.id.checkbox_academic_respectsLearningForSelfAndOthers:
+	            if (checked)
+	            	report.academic_respectsLearningForSelfAndOthers = true;
+	            else
+	            	report.academic_respectsLearningForSelfAndOthers = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_followsDirections:
+	            if (checked)
+	            	report.academic_followsDirections = true;
+	            else
+	            	report.academic_followsDirections = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_consistentlyPreparedAndOrganized:
+	            if (checked)
+	            	report.academic_consistentlyPreparedAndOrganized = true;
+	            else
+	            	report.academic_consistentlyPreparedAndOrganized = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_completesHomeworkAndAssignments:
+	            if (checked)
+	            	report.academic_completesHomeworkAndAssignments = true;
+	            else
+	            	report.academic_completesHomeworkAndAssignments = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_staysOnTask:
+	            if (checked)
+	            	report.academic_staysOnTask = true;
+	            else
+	            	report.academic_staysOnTask = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_peerTutoring:
+	            if (checked)
+	            	report.academic_peerTutoring = true;
+	            else
+	            	report.academic_peerTutoring = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_struggles:
+	            if (checked)
+	            	report.academic_struggles = true;
+	            else
+	            	report.academic_struggles = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_disruptionOfClassLessonActivity:
+	            if (checked)
+	            	report.academic_disruptionOfClassLessonActivity = true;
+	            else
+	            	report.academic_disruptionOfClassLessonActivity = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_refusalToFollowDirectionsAndParticipate:
+	            if (checked)
+	            	report.academic_refusalToFollowDirectionsAndParticipate = true;
+	            else
+	            	report.academic_refusalToFollowDirectionsAndParticipate = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_unPreparedAndDisorganized:
+	            if (checked)
+	            	report.academic_unPreparedAndDisorganized = true;
+	            else
+	            	report.academic_unPreparedAndDisorganized = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_failureToCompleteHomeworkAssignment:
+	            if (checked)
+	            	report.academic_failureToCompleteHomeworkAssignment = true;
+	            else
+	            	report.academic_failureToCompleteHomeworkAssignment = false;  
+	            break;
+	            
+	        case R.id.checkbox_academic_questionableAcademicIntegrity:
+	            if (checked)
+	            	report.academic_questionableAcademicIntegrity = true;
+	            else
+	            	report.academic_questionableAcademicIntegrity = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_plannedIgnoring:
+	            if (checked)
+	            	report.strategy_plannedIgnoring = true;
+	            else
+	            	report.strategy_plannedIgnoring = false;  
+	            break;
+	            
+	            
+	            //strategies
+	        case R.id.checkbox_strategy_behaviorLog:
+	            if (checked)
+	            	report.strategy_behaviorLog = true;
+	            else
+	            	report.strategy_behaviorLog = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_reteachReviewExpectations:
+	            if (checked)
+	            	report.strategy_reteachReviewExpectations = true;
+	            else
+	            	report.strategy_reteachReviewExpectations = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_restorativeAction:
+	            if (checked)
+	            	report.strategy_restorativeAction = true;
+	            else
+	            	report.strategy_restorativeAction = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_apologyVerbalAndOrWritten:
+	            if (checked)
+	            	report.strategy_apologyVerbalAndOrWritten = true;
+	            else
+	            	report.strategy_apologyVerbalAndOrWritten = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_scholarPairingTimeOut:
+	            if (checked)
+	            	report.strategy_scholarPairingTimeOut = true;
+	            else
+	            	report.strategy_scholarPairingTimeOut = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_timeOut:
+	            if (checked)
+	            	report.strategy_timeOut = true;
+	            else
+	            	report.strategy_timeOut = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_ageAppropriateWritingActivity:
+	            if (checked)
+	            	report.strategy_ageAppropriateWritingActivity = true;
+	            else
+	            	report.strategy_ageAppropriateWritingActivity = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_behaviorProcessingForm:
+	            if (checked)
+	            	report.strategy_behaviorProcessingForm = true;
+	            else
+	            	report.strategy_behaviorProcessingForm = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_teacherScholarConversationOutsideClassroom:
+	            if (checked)
+	            	report.strategy_teacherScholarConversationOutsideClassroom = true;
+	            else
+	            	report.strategy_teacherScholarConversationOutsideClassroom = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_conversationWithFamily:
+	            if (checked)
+	            	report.strategy_conversationWithFamily = true;
+	            else
+	            	report.strategy_conversationWithFamily = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_conference:
+	            if (checked)
+	            	report.strategy_conference = true;
+	            else
+	            	report.strategy_conference = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_lossOfPriveleges:
+	            if (checked)
+	            	report.strategy_lossOfPriveleges = true;
+	            else
+	            	report.strategy_lossOfPriveleges = false;  
+	            break;
+	            
+	        case R.id.checkbox_strategy_other:
+	            if (checked)
+	            	report.strategy_other = true;
+	            else
+	            	report.strategy_other = false;  
+	            break;
+	            
 	    }
 	}
 	

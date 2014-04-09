@@ -61,112 +61,112 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="wrap_content"
             android:text="@string/b_report" />
         // 1
-        <CheckBox android:id="@+id/checkbox_bh1"
+        <CheckBox android:id="@+id/checkbox_behavior_respectForSelfAndOthers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh1"
+            android:text="@string/behavior_respectForSelfAndOthers"
             android:onClick="onCheckboxClicked"/>
         // 2
-        <CheckBox android:id="@+id/checkbox_bh2"
+        <CheckBox android:id="@+id/checkbox_behavior_followingDirections"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh2"
+            android:text="@string/behavior_followingDirections"
             android:onClick="onCheckboxClicked"/>
         // 3
-        <CheckBox android:id="@+id/checkbox_bh3"
+        <CheckBox android:id="@+id/checkbox_behavior_positiveConflictResolution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh3"
+            android:text="@string/behavior_positiveConflictResolution"
             android:onClick="onCheckboxClicked"/>
         // 4
-        <CheckBox android:id="@+id/checkbox_bh4"
+        <CheckBox android:id="@+id/checkbox_behavior_peerMediation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh4"
+            android:text="@string/behavior_peerMediation"
             android:onClick="onCheckboxClicked"/>
        // 5
-        <CheckBox android:id="@+id/checkbox_bh5"
+        <CheckBox android:id="@+id/checkbox_behavior_helpingPeerOrStaff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh5"
+            android:text="@string/behavior_helpingPeerOrStaff"
             android:onClick="onCheckboxClicked"/>
             // 6
-        <CheckBox android:id="@+id/checkbox_bh6"
+        <CheckBox android:id="@+id/checkbox_behavior_leadership"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh6"
+            android:text="@string/behavior_leadership"
             android:onClick="onCheckboxClicked"/>
             // 7
-        <CheckBox android:id="@+id/checkbox_bh7"
+        <CheckBox android:id="@+id/checkbox_behavior_dealingWithAdversityPositively"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh7"
+            android:text="@string/behavior_dealingWithAdversityPositively"
             android:onClick="onCheckboxClicked"/>
             // 8
-        <CheckBox android:id="@+id/checkbox_bh8"
+        <CheckBox android:id="@+id/checkbox_behavior_goingAboveAndBeyond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh8"
+            android:text="@string/behavior_goingAboveAndBeyond"
             android:onClick="onCheckboxClicked"/>
             // 9
-        <CheckBox android:id="@+id/checkbox_bh9"
+        <CheckBox android:id="@+id/checkbox_behavior_refusalToFollowDirectionsOrParticipate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh9"
+            android:text="@string/behavior_refusalToFollowDirectionsOrParticipate"
             android:onClick="onCheckboxClicked"/>
             // 10
-        <CheckBox android:id="@+id/checkbox_bh10"
+        <CheckBox android:id="@+id/checkbox_behavior_disruptionOfClassOrActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh10"
+            android:text="@string/behavior_disruptionOfClassOrActivity"
             android:onClick="onCheckboxClicked"/>
             // 11
-        <CheckBox android:id="@+id/checkbox_bh11"
+        <CheckBox android:id="@+id/checkbox_behavior_disrespectOfStaffOrScholars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh11"
+            android:text="@string/behavior_disrespectOfStaffOrScholars"
             android:onClick="onCheckboxClicked"/>
             // 12
-        <CheckBox android:id="@+id/checkbox_bh12"
+        <CheckBox android:id="@+id/checkbox_behavior_inappropriateLanguageOrGestures"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh12"
+            android:text="@string/behavior_inappropriateLanguageOrGestures"
             android:onClick="onCheckboxClicked"/>
             // 13
-        <CheckBox android:id="@+id/checkbox_bh13"
+        <CheckBox android:id="@+id/checkbox_behavior_inappropriatePhysicalContactOrFighting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh13"
+            android:text="@string/behavior_inappropriatePhysicalContactOrFighting"
             android:onClick="onCheckboxClicked"/>
             // 14
-        <CheckBox android:id="@+id/checkbox_bh14"
+        <CheckBox android:id="@+id/checkbox_behavior_teasingOrInstigatingConflict"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh14"
+            android:text="@string/behavior_teasingOrInstigatingConflict"
             android:onClick="onCheckboxClicked"/>
        // 15
-        <CheckBox android:id="@+id/checkbox_bh15"
+        <CheckBox android:id="@+id/checkbox_behavior_runningInCommonSpaces"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh15"
+            android:text="@string/behavior_runningInCommonSpaces"
             android:onClick="onCheckboxClicked"/>
         // 16
-        <CheckBox android:id="@+id/checkbox_bh16"
+        <CheckBox android:id="@+id/checkbox_behavior_leavingSupervisionUnattended"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh16"
+            android:text="@string/behavior_leavingSupervisionUnattended"
             android:onClick="onCheckboxClicked"/>
         // 17
-        <CheckBox android:id="@+id/checkbox_bh17"
+        <CheckBox android:id="@+id/checkbox_behavior_failingToFollowRules"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh17"
+            android:text="@string/behavior_failingToFollowRules"
             android:onClick="onCheckboxClicked"/>
             // 18
-        <CheckBox android:id="@+id/checkbox_bh18"
+        <CheckBox android:id="@+id/checkbox_behavior_other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bh18"
+            android:text="@string/behavior_other"
             android:onClick="onCheckboxClicked"/>
         
         // drop-down for behavior setting
@@ -191,82 +191,82 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:text="@string/a_report" />
             
                     // 1
-        <CheckBox android:id="@+id/a1"
+        <CheckBox android:id="@+id/checkbox_academic_respectsLearningForSelfAndOthers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a1"
+            android:text="@string/academic_respectsLearningForSelfAndOthers"
             android:onClick="onCheckboxClicked"/>
                         // 2
-        <CheckBox android:id="@+id/a2"
+        <CheckBox android:id="@+id/checkbox_academic_followsDirections"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a2"
+            android:text="@string/academic_followsDirections"
             android:onClick="onCheckboxClicked"/>
                         // 3
-        <CheckBox android:id="@+id/checkbox_a3"
+        <CheckBox android:id="@+id/checkbox_academic_consistentlyPreparedAndOrganized"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a3"
+            android:text="@string/academic_consistentlyPreparedAndOrganized"
             android:onClick="onCheckboxClicked"/>
                         // 4
-        <CheckBox android:id="@+id/checkbox_a4"
+        <CheckBox android:id="@+id/checkbox_academic_completesHomeworkAndAssignments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a4"
+            android:text="@string/academic_completesHomeworkAndAssignments"
             android:onClick="onCheckboxClicked"/>
                         // 5
-        <CheckBox android:id="@+id/checkbox_a5"
+        <CheckBox android:id="@+id/checkbox_academic_staysOnTask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a5"
+            android:text="@string/academic_staysOnTask"
             android:onClick="onCheckboxClicked"/>
                         // 6
-        <CheckBox android:id="@+id/checkbox_a6"
+        <CheckBox android:id="@+id/checkbox_academic_peerTutoring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a6"
+            android:text="@string/academic_peerTutoring"
             android:onClick="onCheckboxClicked"/>
                         // 7
-        <CheckBox android:id="@+id/checkbox_a7"
+        <CheckBox android:id="@+id/checkbox_academic_struggles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a7"
+            android:text="@string/academic_struggles"
             android:onClick="onCheckboxClicked"/>
                         // 8
-        <CheckBox android:id="@+id/checkbox_a8"
+        <CheckBox android:id="@+id/checkbox_academic_disruptionOfClassLessonActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a8"
+            android:text="@string/academic_disruptionOfClassLessonActivity"
             android:onClick="onCheckboxClicked"/>
                         // 9
-        <CheckBox android:id="@+id/checkbox_a9"
+        <CheckBox android:id="@+id/checkbox_academic_refusalToFollowDirectionsAndParticipate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a9"
+            android:text="@string/academic_refusalToFollowDirectionsAndParticipate"
             android:onClick="onCheckboxClicked"/>
                         // 10
-        <CheckBox android:id="@+id/checkbox_a10"
+        <CheckBox android:id="@+id/checkbox_academic_unPreparedAndDisorganized"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a10"
+            android:text="@string/academic_unPreparedAndDisorganized"
             android:onClick="onCheckboxClicked"/>
                         // 11
-        <CheckBox android:id="@+id/checkbox_a11"
+        <CheckBox android:id="@+id/checkbox_academic_failureToCompleteHomeworkAssignment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a11"
+            android:text="@string/academic_failureToCompleteHomeworkAssignment"
             android:onClick="onCheckboxClicked"/>
                         // 12
-        <CheckBox android:id="@+id/checkbox_a12"
+        <CheckBox android:id="@+id/checkbox_academic_questionableAcademicIntegrity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a12"
+            android:text="@string/academic_questionableAcademicIntegrity"
             android:onClick="onCheckboxClicked"/>
                         // 13
-        <CheckBox android:id="@+id/checkbox_a13"
+        <CheckBox android:id="@+id/checkbox_academic_other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/a13"
+            android:text="@string/academic_other"
             android:onClick="onCheckboxClicked"/>
                 
             
@@ -294,88 +294,88 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_height="wrap_content"
             android:text="@string/strategies" />
                        // 1
-        <CheckBox android:id="@+id/checkbox_strat1"
+        <CheckBox android:id="@+id/checkbox_strategy_plannedIgnoring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat1"
+            android:text="@string/strategy_plannedIgnoring"
             android:onClick="onCheckboxClicked"/>
                             // 2
-        <CheckBox android:id="@+id/checkbox_strat2"
+        <CheckBox android:id="@+id/checkbox_strategy_behaviorLog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat2"
+            android:text="@string/strategy_behaviorLog"
             android:onClick="onCheckboxClicked"/>
                             // 3
-        <CheckBox android:id="@+id/checkbox_strat3"
+        <CheckBox android:id="@+id/checkbox_strategy_reteachReviewExpectations"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat3"
+            android:text="@string/strategy_reteachReviewExpectations"
             android:onClick="onCheckboxClicked"/>
                             // 4
-        <CheckBox android:id="@+id/checkbox_strat4"
+        <CheckBox android:id="@+id/checkbox_strategy_restorativeAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat4"
+            android:text="@string/strategy_restorativeAction"
             android:onClick="onCheckboxClicked"/>
                             // 5
-        <CheckBox android:id="@+id/checkbox_strat5"
+        <CheckBox android:id="@+id/checkbox_strategy_apologyVerbalAndOrWritten"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat5"
+            android:text="@string/strategy_apologyVerbalAndOrWritten"
             android:onClick="onCheckboxClicked"/>
                             // 6
-        <CheckBox android:id="@+id/checkbox_strat6"
+        <CheckBox android:id="@+id/checkbox_strategy_scholarPairingTimeOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat6"
+            android:text="@string/strategy_scholarPairingTimeOut"
             android:onClick="onCheckboxClicked"/>
                             // 7
-        <CheckBox android:id="@+id/checkbox_strat7"
+        <CheckBox android:id="@+id/checkbox_strategy_timeOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat7"
+            android:text="@string/strategy_timeOut"
             android:onClick="onCheckboxClicked"/>
                             // 8
-        <CheckBox android:id="@+id/checkbox_strat8"
+        <CheckBox android:id="@+id/checkbox_strategy_ageAppropriateWritingActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat8"
+            android:text="@string/strategy_ageAppropriateWritingActivity"
             android:onClick="onCheckboxClicked"/>
                             // 9
-        <CheckBox android:id="@+id/checkbox_strat9"
+        <CheckBox android:id="@+id/checkbox_strategy_behaviorProcessingForm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat9"
+            android:text="@string/strategy_behaviorProcessingForm"
             android:onClick="onCheckboxClicked"/>
                             // 10
-        <CheckBox android:id="@+id/checkbox_strat10"
+        <CheckBox android:id="@+id/checkbox_strategy_teacherScholarConversationOutsideClassroom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat10"
+            android:text="@string/strategy_teacherScholarConversationOutsideClassroom"
             android:onClick="onCheckboxClicked"/>
                             // 11
-        <CheckBox android:id="@+id/checkbox_strat11"
+        <CheckBox android:id="@+id/checkbox_strategy_conversationWithFamily"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat11"
+            android:text="@string/strategy_conversationWithFamily"
             android:onClick="onCheckboxClicked"/>
                             // 12
-        <CheckBox android:id="@+id/checkbox_strat12"
+        <CheckBox android:id="@+id/checkbox_strategy_conference"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat12"
+            android:text="@string/strategy_conference"
             android:onClick="onCheckboxClicked"/>
                             // 13
-        <CheckBox android:id="@+id/checkbox_strat13"
+        <CheckBox android:id="@+id/checkbox_strategy_lossOfPriveleges"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat13"
+            android:text="@string/strategy_lossOfPriveleges"
             android:onClick="onCheckboxClicked"/>
                             // 14
-        <CheckBox android:id="@+id/checkbox_strat14"
+        <CheckBox android:id="@+id/checkbox_strategy_other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strat14"
+            android:text="@string/strategy_other"
             android:onClick="onCheckboxClicked"/>
         
             
