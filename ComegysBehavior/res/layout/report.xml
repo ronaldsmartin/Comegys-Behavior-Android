@@ -3,13 +3,12 @@
     android:layout_width="fill_parent" android:layout_height="fill_parent">
 
 <LinearLayout 
-xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
         
         
-        // name of student
+        <!-- name of student -->
         <LinearLayout android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
@@ -19,14 +18,15 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             android:text="@string/scholar_name" />
         
         <EditText android:id="@+id/scholar_name"
-            android:layout_width="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
             
         </LinearLayout>
         
         
-        // drop-down for grade
+        <!-- drop-down for grade -->
         <LinearLayout android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
@@ -43,133 +43,132 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         </LinearLayout>
         
         
-        // date
+        <!-- date -->
         <DatePicker 
-        android:id="@+id/SelectDate"
-        android:layout_marginTop="10dp"  
-        android:layout_width="fill_parent" 
-        android:layout_height="wrap_content"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:calendarViewShown="false">
+	        android:id="@+id/SelectDate"
+	        android:layout_marginTop="10dp"  
+	        android:layout_width="fill_parent" 
+	        android:layout_height="wrap_content"
+	        android:gravity="center|center_horizontal|center_vertical"
+	        android:calendarViewShown="false">
         
     </DatePicker>
         
         
-        // checkboxes for behavior report
-            
+        <!-- checkboxes for behavior report -->
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/b_report" />
-        // 1
+        <!-- 1 -->
         <CheckBox android:id="@+id/checkbox_behavior_respectForSelfAndOthers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_respectForSelfAndOthers"
             android:onClick="onCheckboxClicked"/>
-        // 2
+        <!-- 2 -->
         <CheckBox android:id="@+id/checkbox_behavior_followingDirections"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_followingDirections"
             android:onClick="onCheckboxClicked"/>
-        // 3
+        <!-- 3 -->
         <CheckBox android:id="@+id/checkbox_behavior_positiveConflictResolution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_positiveConflictResolution"
             android:onClick="onCheckboxClicked"/>
-        // 4
+        <!-- 4 -->
         <CheckBox android:id="@+id/checkbox_behavior_peerMediation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_peerMediation"
             android:onClick="onCheckboxClicked"/>
-       // 5
+       <!-- 5 -->
         <CheckBox android:id="@+id/checkbox_behavior_helpingPeerOrStaff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_helpingPeerOrStaff"
             android:onClick="onCheckboxClicked"/>
-            // 6
+        <!-- 6 -->
         <CheckBox android:id="@+id/checkbox_behavior_leadership"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_leadership"
             android:onClick="onCheckboxClicked"/>
-            // 7
+        <!-- 7 -->
         <CheckBox android:id="@+id/checkbox_behavior_dealingWithAdversityPositively"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_dealingWithAdversityPositively"
             android:onClick="onCheckboxClicked"/>
-            // 8
+        <!-- 8 -->
         <CheckBox android:id="@+id/checkbox_behavior_goingAboveAndBeyond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_goingAboveAndBeyond"
             android:onClick="onCheckboxClicked"/>
-            // 9
+        <!-- 9 -->
         <CheckBox android:id="@+id/checkbox_behavior_refusalToFollowDirectionsOrParticipate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_refusalToFollowDirectionsOrParticipate"
             android:onClick="onCheckboxClicked"/>
-            // 10
+        <!-- 10 -->
         <CheckBox android:id="@+id/checkbox_behavior_disruptionOfClassOrActivity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_disruptionOfClassOrActivity"
             android:onClick="onCheckboxClicked"/>
-            // 11
+        <!-- 11 -->
         <CheckBox android:id="@+id/checkbox_behavior_disrespectOfStaffOrScholars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_disrespectOfStaffOrScholars"
             android:onClick="onCheckboxClicked"/>
-            // 12
+        <!-- 12 -->
         <CheckBox android:id="@+id/checkbox_behavior_inappropriateLanguageOrGestures"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_inappropriateLanguageOrGestures"
             android:onClick="onCheckboxClicked"/>
-            // 13
+        <!-- 13 -->
         <CheckBox android:id="@+id/checkbox_behavior_inappropriatePhysicalContactOrFighting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_inappropriatePhysicalContactOrFighting"
             android:onClick="onCheckboxClicked"/>
-            // 14
+        <!-- 14 -->
         <CheckBox android:id="@+id/checkbox_behavior_teasingOrInstigatingConflict"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_teasingOrInstigatingConflict"
             android:onClick="onCheckboxClicked"/>
-       // 15
+       <!-- 15 -->
         <CheckBox android:id="@+id/checkbox_behavior_runningInCommonSpaces"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_runningInCommonSpaces"
             android:onClick="onCheckboxClicked"/>
-        // 16
+        <!-- 16 -->
         <CheckBox android:id="@+id/checkbox_behavior_leavingSupervisionUnattended"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_leavingSupervisionUnattended"
             android:onClick="onCheckboxClicked"/>
-        // 17
+        <!-- 17 -->
         <CheckBox android:id="@+id/checkbox_behavior_failingToFollowRules"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_failingToFollowRules"
             android:onClick="onCheckboxClicked"/>
-            // 18
+        <!-- 18 -->
         <CheckBox android:id="@+id/checkbox_behavior_other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/behavior_other"
             android:onClick="onCheckboxClicked"/>
         
-        // drop-down for behavior setting
+        <!-- drop-down for behavior setting -->
         <LinearLayout android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
@@ -185,7 +184,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             
         </LinearLayout>    
             
-        // checkboxes for academic report
+        <!-- checkboxes for academic report -->
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/a_report" />
@@ -382,10 +381,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
             
         
         <Button
-        android:id="@+id/submit_report_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit Report" />
+	        android:id="@+id/submit_report_button"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Submit Report" />
         
     </LinearLayout>
 </ScrollView>

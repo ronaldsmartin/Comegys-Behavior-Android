@@ -157,11 +157,17 @@ public class MainActivity extends FragmentActivity implements
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a StrategySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
-			Fragment fragment = new BehaviorFragment();
-			Bundle args = new Bundle();
-			args.putInt(BehaviorFragment.ARG_SECTION_NUMBER, position + 1);
-			fragment.setArguments(args);
-			return fragment;
+			if (position == 0) {
+				Fragment fragment = new BehaviorFragment();
+				Bundle args = new Bundle();
+				args.putInt(BehaviorFragment.ARG_SECTION_NUMBER, position + 1);
+				fragment.setArguments(args);
+				return fragment;
+			} else {
+				Fragment fragment = new ReportsListFragment();
+				return fragment;
+			}
+			
 		}
 
 		@Override
