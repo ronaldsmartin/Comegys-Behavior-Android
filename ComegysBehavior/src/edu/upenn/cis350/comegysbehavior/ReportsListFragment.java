@@ -4,6 +4,7 @@
 package edu.upenn.cis350.comegysbehavior;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -14,10 +15,12 @@ import com.parse.ParseQuery;
 import com.parse.ParseException;
 
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -64,6 +67,7 @@ public class ReportsListFragment extends Fragment {
 	
 	protected void updateView() {
 		ArrayList<String> alphabetizedStudentNames = new ArrayList<String>();
+		final ArrayList<Report> pastReportList = new ArrayList<Report>(ReportsListFragment.this.reports);
 		for (Report report : ReportsListFragment.this.reports) {
 			alphabetizedStudentNames.add(report.studentName);
 		}
@@ -71,6 +75,15 @@ public class ReportsListFragment extends Fragment {
 		
 		ListView listView = (ListView) getActivity().findViewById(R.id.reports_list);
 		listView.setAdapter(adapter);
+		
+		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView <?> parent, View view, int position, long id) {
+				// Pass the report at this index to the details view.
+				Intent detailPage = new Intent(getActivity(), PastReportDetails.class);
+				detailPage.putExtra(getString(R.string.past_report_data), pastReportList.get(position));
+				getActivity().startActivity(detailPage);
+			}
+		});
 	}
 
 	public class ReportNameComparator implements Comparator<Report> {

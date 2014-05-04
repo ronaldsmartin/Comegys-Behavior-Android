@@ -98,6 +98,10 @@
     <string-array name="temp_array">
         <item>Please choose report type (Academic or Behavior)</item>
     </string-array>
+    
+    <!-- Bundle keys -->
+    <string name="past_report_data">PastReport data</string>
+    
 </resources>
 
 

@@ -3,13 +3,16 @@
  */
 package edu.upenn.cis350.comegysbehavior;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.parse.ParseObject;
 
 /**
  * @author Ronald Martin
  * Object describing a behavior report
  */
-public class Report {
+public class Report implements Parcelable {
 	
 	// Subject Info
 	public String studentName = "";
@@ -154,6 +157,18 @@ public class Report {
 		
 		reportParse.put("report_details", reportDetailsAndComments);
 		return reportParse;
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel arg0, int arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
