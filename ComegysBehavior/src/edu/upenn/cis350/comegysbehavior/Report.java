@@ -165,10 +165,28 @@ public class Report implements Parcelable {
 		return 0;
 	}
 
+	//We will simply start by Displaying the Student NAME: TODO  Add more data fields
 	@Override
-	public void writeToParcel(Parcel arg0, int arg1) {
-		// TODO Auto-generated method stub
+	public void writeToParcel(Parcel out, int flags) {
+		out.writeString(this.studentName);
 		
 	}
+	
+	private Report(Parcel in) {
+		this.studentName = in.readString();
+	}
+
+	public static final Parcelable.Creator<Report> CREATOR
+			= new Parcelable.Creator<Report>() {
+		@Override
+		public Report createFromParcel(Parcel in) {
+			return new Report(in);
+		}
+
+		@Override
+		public Report[] newArray(int size) {
+			return new Report[size];
+		}
+	};
 
 }
