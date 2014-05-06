@@ -191,80 +191,7 @@ public class MainActivity extends FragmentActivity implements
 
 
 	
-	/**
-	 * Fragment that shows behavior report
-	 */
-	public static class BehaviorFragment extends Fragment {
-		
-		public static final String ARG_SECTION_NUMBER = "section_number";
-		public BehaviorFragment() {
-		}
-		
-		private Spinner academic_settings_spinner, behavior_settings_spinner, grade_spinner;
-		private EditText student_name;
-		private DatePicker date;
-		
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.report,
-					container, false);
-			setSpinnerContent(rootView);
-			
-			student_name = (EditText) rootView.findViewById(R.id.scholar_name);
-			//student_grade = (EditText) rootView.findViewById(R.id.grade);
-			//date = (EditText) rootView.findViewById(R.id.date);
-			date = (DatePicker) rootView.findViewById(R.id.SelectDate);
-			
-			final Button button = (Button) rootView.findViewById(R.id.submit_report_button);
-	         button.setOnClickListener(new View.OnClickListener() {
-	             public void onClick(View v) {
-	            	 Log.d("DAS BUTTON", "WORKS");
-	            	 String studentName = student_name.getText().toString();
-	            	 report.studentName = studentName;
-	            	 String studentGrade = grade_spinner.getSelectedItem().toString();
-	            	 report.studentGrade = studentGrade;
-	            	 int day = date.getDayOfMonth();
-	            	 int month = date.getMonth();
-	            	 int year =  date.getYear();
 
-	            	 Calendar calendar = Calendar.getInstance();
-	            	 calendar.set(year, month, day);
-	            	 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-	            	 String dateOfInfraction = sdf.format(calendar.getTime());
-	            	/*
-	            	 String strategyInput = strategy_spinner.getSelectedItem().toString();
-	            	 String settingsInput = settings_spinner.getSelectedItem().toString();
-	            	 String behaviorInput = behavior_spinner.getSelectedItem().toString();
-	            	 String academicInput = academic_spinner.getSelectedItem().toString();
-	            	 //Log.d("DAS BUTTON", strategyInput);
-	            	 
-	            	 ParseObject gameScore = new ParseObject("Report");
-	            	 gameScore.put("studentName", studentName);
-	            	 gameScore.put("studentGrade", studentGrade);
-	            	 gameScore.put("date", dateOfInfraction);
-	            	 gameScore.put("strategyInput", strategyInput);
-	            	 gameScore.put("settingsInput", settingsInput);
-	            	 gameScore.put("behaviorInput", behaviorInput);
-	            	 gameScore.put("academicInput", academicInput);
-	            	 gameScore.saveInBackground();
-	            	 */
-	             }
-	         });
-			
-			return rootView;
-		}
-		private void setSpinnerContent( View view )
-		{
-		  behavior_settings_spinner = (Spinner) view.findViewById( R.id.behavior_settings_spinner );
-		  academic_settings_spinner = (Spinner) view.findViewById( R.id.academic_settings_spinner); 
-		  grade_spinner = (Spinner) view.findViewById( R.id.grade_spinner);
-		 }
-		
-	
-		
-		
-	}
 	
 	public void onCheckboxClicked(View view) {
 	    // Is the view now checked?
@@ -391,12 +318,6 @@ public class MainActivity extends FragmentActivity implements
 	            	report.behavior_failingToFollowRules = false;  
 	            break;
 	            
-	        case R.id.checkbox_behavior_other:
-	            if (checked)
-	            	report.behavior_other = true;
-	            else
-	            	report.behavior_other = false;  
-	            break;
 	        
 	            // academic
 	        case R.id.checkbox_academic_respectsLearningForSelfAndOthers:
@@ -576,12 +497,6 @@ public class MainActivity extends FragmentActivity implements
 	            	report.strategy_lossOfPriveleges = false;  
 	            break;
 	            
-	        case R.id.checkbox_strategy_other:
-	            if (checked)
-	            	report.strategy_other = true;
-	            else
-	            	report.strategy_other = false;  
-	            break;
 	            
 	    }
 	}

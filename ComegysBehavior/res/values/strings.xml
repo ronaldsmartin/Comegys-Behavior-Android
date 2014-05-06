@@ -11,8 +11,11 @@
     <string name="date">Date</string>
     <string name="b_report">Behavior Report</string>
     <string name="a_report">Academic Report</string>
+    <string name="positive">Positive</string>
+    <string name="negative">Negative</string>
     <string name="strategies">Strategies / Interventions Used By Staff</string>
     <string name="location">Setting</string>
+    <string name="comments">Comments</string>
     
     
         <string name="strategy_plannedIgnoring">Planned ignoring (differential attention)</string>
