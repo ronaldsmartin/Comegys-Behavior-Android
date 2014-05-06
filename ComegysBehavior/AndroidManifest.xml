@@ -25,10 +25,7 @@
             </intent-filter>
         </activity>
          <activity
-            android:name="edu.upenn.cis350.comegysbehavior.PastReportDetails"
-            >
-
-        </activity>
+            android:name="edu.upenn.cis350.comegysbehavior.PastReportDetails" />
     </application>
 
 </manifest>

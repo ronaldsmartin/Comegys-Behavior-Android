@@ -15,9 +15,15 @@ import com.parse.ParseObject;
 public class Report implements Parcelable {
 	
 	// Subject Info
-	public String studentName = "";
-	public String studentGrade = "";
+	public String studentName       = "";
+	public String studentGrade      = "";
 	public String reportCreatedDate = "";
+	
+	// Summaries
+	public String locationSummary = "";
+	public String behaviorSummary = "";
+	public String academicSummary = "";
+	public String strategySummary = "";
 	
 	/* BEHAVIOR REPORT */
 	
@@ -103,8 +109,36 @@ public class Report implements Parcelable {
         retrieveStrategyData(parseObject);
         
         this.reportDetailsAndComments = parseObject.getString("report_details");
+        createSummaries();
     }
     
+    private void retrieveBehaviorData(ParseObject parseObject) {
+        // Retrieve behavior report data (positive).
+        this.behavior_respectForSelfAndOthers = parseObject.getBoolean("behavior_respectForSelfAndOthers");
+        this.behavior_followingDirections = parseObject.getBoolean("behavior_followingDirections");
+        this.behavior_positiveConflictResolution = parseObject.getBoolean("behavior_positiveConflictResolution");
+        this.behavior_peerMediation = parseObject.getBoolean("behavior_peerMediation");
+        this.behavior_helpingPeerOrStaff = parseObject.getBoolean("behavior_helpingPeerOrStaff");
+        this.behavior_leadership = parseObject.getBoolean("behavior_leadership");
+        this.behavior_dealingWithAdversityPositively = parseObject.getBoolean("behavior_dealingWithAdversityPositively");
+        this.behavior_goingAboveAndBeyond = parseObject.getBoolean("behavior_goingAboveAndBeyond");
+        
+        // Retrieve behavior report data (negative).          
+        this.behavior_refusalToFollowDirectionsOrParticipate = parseObject.getBoolean("behavior_refusalToFollowDirectionsOrParticipate");
+        this.behavior_disruptionOfClassOrActivity = parseObject.getBoolean("behavior_disruptionOfClassOrActivity");
+        this.behavior_disrespectOfStaffOrScholars = parseObject.getBoolean("behavior_disrespectOfStaffOrScholars");
+        this.behavior_inappropriateLanguageOrGestures = parseObject.getBoolean("behavior_inappropriateLanguageOrGestures");
+        this.behavior_inappropriatePhysicalContactOrFighting = parseObject.getBoolean("behavior_inappropriatePhysicalContactOrFighting");
+        this.behavior_teasingOrInstigatingConflict = parseObject.getBoolean("behavior_teasingOrInstigatingConflict");
+        this.behavior_runningInCommonSpaces = parseObject.getBoolean("behavior_runningInCommonSpaces");
+        this.behavior_leavingSupervisionUnattended = parseObject.getBoolean("behavior_leavingSupervisionUnattended");
+        this.behavior_failingToFollowRules = parseObject.getBoolean("behavior_failingToFollowRules");
+        
+        // Retrieve behavior setting
+        this.behaviorSetting = parseObject.getString("behavior_setting");
+        
+        this.behavior_other = parseObject.getBoolean("behavior_other");
+    }
     
     private void retrieveAcademicData(ParseObject parseObject) {
         // Retrieve academic data.
@@ -141,44 +175,19 @@ public class Report implements Parcelable {
         this.strategy_other = parseObject.getBoolean("strategy_other");
     }
     
-    private void retrieveBehaviorData(ParseObject parseObject) {
-        // Retrieve behavior report data (positive).
-        this.behavior_respectForSelfAndOthers = parseObject.getBoolean("behavior_respectForSelfAndOthers");
-        this.behavior_followingDirections = parseObject.getBoolean("behavior_followingDirections");
-        this.behavior_positiveConflictResolution = parseObject.getBoolean("behavior_positiveConflictResolution");
-        this.behavior_peerMediation = parseObject.getBoolean("behavior_peerMediation");
-        this.behavior_helpingPeerOrStaff = parseObject.getBoolean("behavior_helpingPeerOrStaff");
-        this.behavior_leadership = parseObject.getBoolean("behavior_leadership");
-        this.behavior_dealingWithAdversityPositively = parseObject.getBoolean("behavior_dealingWithAdversityPositively");
-        this.behavior_goingAboveAndBeyond = parseObject.getBoolean("behavior_goingAboveAndBeyond");
-        
-        // Retrieve behavior report data (negative).          
-        this.behavior_refusalToFollowDirectionsOrParticipate = parseObject.getBoolean("behavior_refusalToFollowDirectionsOrParticipate");
-        this.behavior_disruptionOfClassOrActivity = parseObject.getBoolean("behavior_disruptionOfClassOrActivity");
-        this.behavior_disrespectOfStaffOrScholars = parseObject.getBoolean("behavior_disrespectOfStaffOrScholars");
-        this.behavior_inappropriateLanguageOrGestures = parseObject.getBoolean("behavior_inappropriateLanguageOrGestures");
-        this.behavior_inappropriatePhysicalContactOrFighting = parseObject.getBoolean("behavior_inappropriatePhysicalContactOrFighting");
-        this.behavior_teasingOrInstigatingConflict = parseObject.getBoolean("behavior_teasingOrInstigatingConflict");
-        this.behavior_runningInCommonSpaces = parseObject.getBoolean("behavior_runningInCommonSpaces");
-        this.behavior_leavingSupervisionUnattended = parseObject.getBoolean("behavior_leavingSupervisionUnattended");
-        this.behavior_failingToFollowRules = parseObject.getBoolean("behavior_failingToFollowRules");
-        
-        // Retrieve behavior setting
-        this.behaviorSetting = parseObject.getString("behavior_setting");
-        
-        // TODO: behaviorOther
-    }
     /*
      * Return this Report as a Parse Object to push to the database.
      */
     public ParseObject getParseObject() {
+    	createSummaries();
+    	
         ParseObject reportParse = new ParseObject("Report");
         // Add report subject info.
         reportParse.put("studentName", studentName);
         reportParse.put("studentGrade", studentGrade);
         reportParse.put("date", reportCreatedDate);
         
-        // Add behavior report data.
+        // Add positive behavior report data.
         reportParse.put("behavior_respectForSelfAndOthers", behavior_respectForSelfAndOthers);
         reportParse.put("behavior_followingDirections", behavior_followingDirections);
         reportParse.put("behavior_positiveConflictResolution", behavior_positiveConflictResolution);
@@ -187,6 +196,8 @@ public class Report implements Parcelable {
         reportParse.put("behavior_leadership", behavior_leadership);
         reportParse.put("behavior_dealingWithAdversityPositively", behavior_dealingWithAdversityPositively);
         reportParse.put("behavior_goingAboveAndBeyond", behavior_goingAboveAndBeyond);
+        
+        // Add negative behavior report data.
         reportParse.put("behavior_refusalToFollowDirectionsOrParticipate", behavior_refusalToFollowDirectionsOrParticipate);
         reportParse.put("behavior_disruptionOfClassOrActivity", behavior_disruptionOfClassOrActivity);
         reportParse.put("behavior_disrespectOfStaffOrScholars", behavior_disrespectOfStaffOrScholars);
@@ -196,6 +207,9 @@ public class Report implements Parcelable {
         reportParse.put("behavior_runningInCommonSpaces", behavior_runningInCommonSpaces);
         reportParse.put("behavior_leavingSupervisionUnattended", behavior_leavingSupervisionUnattended);
         reportParse.put("behavior_failingToFollowRules", behavior_failingToFollowRules);
+       
+        // Add other behavior report data.
+        reportParse.put("behavior_other", behavior_other);
         reportParse.put("behavior_setting", behaviorSetting);
         
         // Add academic data.
@@ -211,7 +225,9 @@ public class Report implements Parcelable {
         reportParse.put("academic_unPreparedAndDisorganized", academic_unPreparedAndDisorganized);
         reportParse.put("academic_failureToCompleteHomeworkAssignment", academic_failureToCompleteHomeworkAssignment);
         reportParse.put("academic_questionableAcademicIntegrity", academic_questionableAcademicIntegrity);
+        
         reportParse.put("academic_other", academic_other);
+        reportParse.put("academic_setting", academicSetting);
         
         // Add strategy data.
         reportParse.put("strategy_plannedIgnoring", strategy_plannedIgnoring);
@@ -233,10 +249,13 @@ public class Report implements Parcelable {
         return reportParse;
     }
     
+    private void createSummaries() {
+    	
+    }
+    
     @Override
     public String toString() {
         return this.studentName + " " + this.reportCreatedDate;
-        
     }
     
 	@Override
@@ -245,15 +264,25 @@ public class Report implements Parcelable {
 		return 0;
 	}
 
-	//We will simply start by Displaying the Student NAME: TODO  Add more data fields
 	@Override
 	public void writeToParcel(Parcel out, int flags) {
 		out.writeString(this.studentName);
-		
+		out.writeString(this.studentGrade);
+		out.writeString(this.reportCreatedDate);
+		out.writeString(this.behaviorSummary);
+		out.writeString(this.academicSummary);
+		out.writeString(this.strategySummary);
+		out.writeString(this.reportDetailsAndComments);
 	}
 	
 	private Report(Parcel in) {
-		this.studentName = in.readString();
+		this.studentName              = in.readString();
+		this.studentGrade             = in.readString();
+		this.reportCreatedDate        = in.readString();
+		this.behaviorSummary          = in.readString();
+		this.academicSummary          = in.readString();
+		this.strategySummary          = in.readString();
+		this.reportDetailsAndComments = in.readString();
 	}
 
 	public static final Parcelable.Creator<Report> CREATOR
