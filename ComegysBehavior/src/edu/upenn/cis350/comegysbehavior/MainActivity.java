@@ -179,7 +179,7 @@ public class MainActivity extends FragmentActivity implements
 
 	
 
-	/*
+	
 	public void onCheckboxClicked(View view) {
 	    // Is the view now checked?
 	    boolean checked = ((CheckBox) view).isChecked();
@@ -486,7 +486,7 @@ public class MainActivity extends FragmentActivity implements
 	            
 	            
 	    }
-	}*/
+	}
 	
 	/**
 	 * A dummy fragment representing a section of the app, but that simply
