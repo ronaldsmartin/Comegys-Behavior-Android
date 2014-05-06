@@ -105,6 +105,9 @@
     <!-- Bundle keys -->
     <string name="past_report_data">PastReport data</string>
     
+    <!-- Past Report Menu -->
+    <string name="menu_refresh">Refresh</string>
+    
 </resources>
 
 
