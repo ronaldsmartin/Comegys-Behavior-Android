@@ -15,7 +15,7 @@ import com.parse.ParseObject;
 public class Report implements Parcelable {
 	
 	// Subject Info
-	public String studentName = " ";
+	public String studentName = "";
 	public String studentGrade = "";
 	public String reportCreatedDate = "";
 	
