@@ -21,7 +21,7 @@ public class PastReportDetails extends Activity {
 
 		// Set all labels.
 		TextView nameLabel = (TextView) findViewById(R.id.name);
-		String name = pastReport.studentName;
+		String name = "Scholar Name: "+ pastReport.studentName;
 		nameLabel.setText(name); 
 
 		/*TextView emailLabel = (TextView) findViewById(R.id.email);

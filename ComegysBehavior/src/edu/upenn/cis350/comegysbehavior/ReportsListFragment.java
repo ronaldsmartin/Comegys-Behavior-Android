@@ -17,6 +17,7 @@ import com.parse.ParseException;
 import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,9 +78,12 @@ public class ReportsListFragment extends Fragment {
 		listView.setAdapter(adapter);
 		
 		listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			
 			public void onItemClick(AdapterView <?> parent, View view, int position, long id) {
 				// Pass the report at this index to the details view.
+				
 				Intent detailPage = new Intent(getActivity(), PastReportDetails.class);
+				
 				detailPage.putExtra(getString(R.string.past_report_data), pastReportList.get(position));
 				getActivity().startActivity(detailPage);
 			}
@@ -90,6 +94,7 @@ public class ReportsListFragment extends Fragment {
 		@Override
 		public int compare(Report reportOne, Report reportTwo) {
 			// Retrieve names
+			
 			final String reportOneName = reportOne.studentName;
 			final String reportTwoName = reportTwo.studentName;
 			
