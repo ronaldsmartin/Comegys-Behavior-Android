@@ -87,78 +87,158 @@ public class Report implements Parcelable {
 		// TODO Auto-generated constructor stub
 	}
 	
-	/*
-	 * Create a Report object from an object retrieved from Parse
-	 */
-	public Report(ParseObject parseObject) {
-		
-	}
-	
-	/*
-	 * Return this Report as a Parse Object to push to the database.
-	 */
-	public ParseObject getParseObject() {
-		ParseObject reportParse = new ParseObject("Report");
-		// Add report subject info.
-		reportParse.put("studentName", studentName);
-		reportParse.put("studentGrade", studentGrade);
-		reportParse.put("date", reportCreatedDate);
-		
-		// Add behavior report data.
-		reportParse.put("behavior_respectForSelfAndOthers", behavior_respectForSelfAndOthers);
-		reportParse.put("behavior_followingDirections", behavior_followingDirections);
-		reportParse.put("behavior_positiveConflictResolution", behavior_positiveConflictResolution);
-		reportParse.put("behavior_peerMediation", behavior_peerMediation);
-		reportParse.put("behavior_helpingPeerOrStaff", behavior_helpingPeerOrStaff);
-		reportParse.put("behavior_leadership", behavior_leadership);
-		reportParse.put("behavior_dealingWithAdversityPositively", behavior_dealingWithAdversityPositively);
-		reportParse.put("behavior_goingAboveAndBeyond", behavior_goingAboveAndBeyond);
-		reportParse.put("behavior_refusalToFollowDirectionsOrParticipate", behavior_refusalToFollowDirectionsOrParticipate);
-		reportParse.put("behavior_disruptionOfClassOrActivity", behavior_disruptionOfClassOrActivity);
-		reportParse.put("behavior_disrespectOfStaffOrScholars", behavior_disrespectOfStaffOrScholars);
-		reportParse.put("behavior_inappropriateLanguageOrGestures", behavior_inappropriateLanguageOrGestures);
-		reportParse.put("behavior_inappropriatePhysicalContactOrFighting", behavior_inappropriatePhysicalContactOrFighting);
-		reportParse.put("behavior_teasingOrInstigatingConflict", behavior_teasingOrInstigatingConflict);
-		reportParse.put("behavior_runningInCommonSpaces", behavior_runningInCommonSpaces);
-		reportParse.put("behavior_leavingSupervisionUnattended", behavior_leavingSupervisionUnattended);
-		reportParse.put("behavior_failingToFollowRules", behavior_failingToFollowRules);
-		reportParse.put("behavior_setting", behaviorSetting);
-		
-		// Add academic data.
-		reportParse.put("academic_respectsLearningForSelfAndOthers", academic_respectsLearningForSelfAndOthers);
-		reportParse.put("academic_followsDirections", academic_followsDirections);
-		reportParse.put("academic_consistentlyPreparedAndOrganized", academic_consistentlyPreparedAndOrganized);
-		reportParse.put("academic_completesHomeworkAndAssignments", academic_completesHomeworkAndAssignments);
-		reportParse.put("academic_staysOnTask", academic_staysOnTask);
-		reportParse.put("academic_peerTutoring", academic_peerTutoring);
-		reportParse.put("academic_struggles", academic_struggles);
-		reportParse.put("academic_disruptionOfClassLessonActivity", academic_disruptionOfClassLessonActivity);
-		reportParse.put("academic_refusalToFollowDirectionsAndParticipate", academic_refusalToFollowDirectionsAndParticipate);
-		reportParse.put("academic_unPreparedAndDisorganized", academic_unPreparedAndDisorganized);
-		reportParse.put("academic_failureToCompleteHomeworkAssignment", academic_failureToCompleteHomeworkAssignment);
-		reportParse.put("academic_questionableAcademicIntegrity", academic_questionableAcademicIntegrity);
-		reportParse.put("academic_other", academic_other);
-		
-		// Add strategy data.
-	    reportParse.put("strategy_plannedIgnoring", strategy_plannedIgnoring);
-	    reportParse.put("strategy_behaviorLog", strategy_behaviorLog);
-	    reportParse.put("strategy_reteachReviewExpectations", strategy_reteachReviewExpectations);
-	    reportParse.put("strategy_restorativeAction", strategy_restorativeAction);
-	    reportParse.put("strategy_apologyVerbalAndOrWritten", strategy_apologyVerbalAndOrWritten);
-	    reportParse.put("strategy_scholarPairingTimeOut", strategy_scholarPairingTimeOut);
-	    reportParse.put("strategy_timeOut", strategy_timeOut);
-	    reportParse.put("strategy_ageAppropriateWritingActivity", strategy_ageAppropriateWritingActivity);
-	    reportParse.put("strategy_behaviorProcessingForm", strategy_behaviorProcessingForm);
-	    reportParse.put("strategy_teacherScholarConversationOutsideClassroom", strategy_teacherScholarConversationOutsideClassroom);
-	    reportParse.put("strategy_conversationWithFamily", strategy_conversationWithFamily);
-	    reportParse.put("strategy_conference", strategy_conference);
-	    reportParse.put("strategy_lossOfPriveleges", strategy_lossOfPriveleges);
-	    reportParse.put("strategy_other", strategy_other);
-		
-		reportParse.put("report_details", reportDetailsAndComments);
-		return reportParse;
-	}
-
+	 /*
+     * Create a Report object from an object retrieved from Parse
+     */
+    public Report(ParseObject parseObject) {
+        // Retrieve report subject info.
+        this.studentName       = parseObject.getString("studentName");
+        this.studentGrade      = parseObject.getString("studentGrade");
+        this.reportCreatedDate = parseObject.getString("date");
+        
+        retrieveBehaviorData(parseObject);
+        
+        retrieveAcademicData(parseObject);
+        
+        retrieveStrategyData(parseObject);
+        
+        this.reportDetailsAndComments = parseObject.getString("report_details");
+    }
+    
+    
+    private void retrieveAcademicData(ParseObject parseObject) {
+        // Retrieve academic data.
+        this.academic_respectsLearningForSelfAndOthers = parseObject.getBoolean("academic_respectsLearningForSelfAndOthers");
+        this.academic_followsDirections = parseObject.getBoolean("academic_followsDirections");
+        this.academic_consistentlyPreparedAndOrganized = parseObject.getBoolean("academic_consistentlyPreparedAndOrganized");
+        this.academic_completesHomeworkAndAssignments = parseObject.getBoolean("academic_completesHomeworkAndAssignments");
+        this.academic_staysOnTask = parseObject.getBoolean("academic_staysOnTask");
+        this.academic_peerTutoring = parseObject.getBoolean("academic_peerTutoring");
+        this.academic_struggles = parseObject.getBoolean("academic_struggles");
+        this.academic_disruptionOfClassLessonActivity = parseObject.getBoolean("academic_disruptionOfClassLessonActivity");
+        this.academic_refusalToFollowDirectionsAndParticipate = parseObject.getBoolean("academic_refusalToFollowDirectionsAndParticipate");
+        this.academic_unPreparedAndDisorganized = parseObject.getBoolean("academic_unPreparedAndDisorganized");
+        this.academic_failureToCompleteHomeworkAssignment = parseObject.getBoolean("academic_failureToCompleteHomeworkAssignment");
+        this.academic_questionableAcademicIntegrity = parseObject.getBoolean("academic_questionableAcademicIntegrity");
+        this.academic_other = parseObject.getBoolean("academic_other");
+    }
+    
+    private void retrieveStrategyData(ParseObject parseObject) {
+        // Retrieve strategy data.
+        this.strategy_plannedIgnoring = parseObject.getBoolean("strategy_plannedIgnoring");
+        this.strategy_behaviorLog = parseObject.getBoolean("strategy_behaviorLog");
+        this.strategy_reteachReviewExpectations = parseObject.getBoolean("strategy_reteachReviewExpectations");
+        this.strategy_restorativeAction = parseObject.getBoolean("strategy_restorativeAction");
+        this.strategy_apologyVerbalAndOrWritten = parseObject.getBoolean("strategy_apologyVerbalAndOrWritten");
+        this.strategy_scholarPairingTimeOut = parseObject.getBoolean("strategy_scholarPairingTimeOut");
+        this.strategy_timeOut = parseObject.getBoolean("strategy_timeOut");
+        this.strategy_ageAppropriateWritingActivity = parseObject.getBoolean("strategy_ageAppropriateWritingActivity");
+        this.strategy_behaviorProcessingForm = parseObject.getBoolean("strategy_behaviorProcessingForm");
+        this.strategy_teacherScholarConversationOutsideClassroom = parseObject.getBoolean("strategy_teacherScholarConversationOutsideClassroom");
+        this.strategy_conversationWithFamily = parseObject.getBoolean("strategy_conversationWithFamily");
+        this.strategy_conference = parseObject.getBoolean("strategy_conference");
+        this.strategy_lossOfPriveleges = parseObject.getBoolean("strategy_lossOfPriveleges");
+        this.strategy_other = parseObject.getBoolean("strategy_other");
+    }
+    
+    private void retrieveBehaviorData(ParseObject parseObject) {
+        // Retrieve behavior report data (positive).
+        this.behavior_respectForSelfAndOthers = parseObject.getBoolean("behavior_respectForSelfAndOthers");
+        this.behavior_followingDirections = parseObject.getBoolean("behavior_followingDirections");
+        this.behavior_positiveConflictResolution = parseObject.getBoolean("behavior_positiveConflictResolution");
+        this.behavior_peerMediation = parseObject.getBoolean("behavior_peerMediation");
+        this.behavior_helpingPeerOrStaff = parseObject.getBoolean("behavior_helpingPeerOrStaff");
+        this.behavior_leadership = parseObject.getBoolean("behavior_leadership");
+        this.behavior_dealingWithAdversityPositively = parseObject.getBoolean("behavior_dealingWithAdversityPositively");
+        this.behavior_goingAboveAndBeyond = parseObject.getBoolean("behavior_goingAboveAndBeyond");
+        
+        // Retrieve behavior report data (negative).          
+        this.behavior_refusalToFollowDirectionsOrParticipate = parseObject.getBoolean("behavior_refusalToFollowDirectionsOrParticipate");
+        this.behavior_disruptionOfClassOrActivity = parseObject.getBoolean("behavior_disruptionOfClassOrActivity");
+        this.behavior_disrespectOfStaffOrScholars = parseObject.getBoolean("behavior_disrespectOfStaffOrScholars");
+        this.behavior_inappropriateLanguageOrGestures = parseObject.getBoolean("behavior_inappropriateLanguageOrGestures");
+        this.behavior_inappropriatePhysicalContactOrFighting = parseObject.getBoolean("behavior_inappropriatePhysicalContactOrFighting");
+        this.behavior_teasingOrInstigatingConflict = parseObject.getBoolean("behavior_teasingOrInstigatingConflict");
+        this.behavior_runningInCommonSpaces = parseObject.getBoolean("behavior_runningInCommonSpaces");
+        this.behavior_leavingSupervisionUnattended = parseObject.getBoolean("behavior_leavingSupervisionUnattended");
+        this.behavior_failingToFollowRules = parseObject.getBoolean("behavior_failingToFollowRules");
+        
+        // Retrieve behavior setting
+        this.behaviorSetting = parseObject.getString("behavior_setting");
+        
+        // TODO: behaviorOther
+    }
+    /*
+     * Return this Report as a Parse Object to push to the database.
+     */
+    public ParseObject getParseObject() {
+        ParseObject reportParse = new ParseObject("Report");
+        // Add report subject info.
+        reportParse.put("studentName", studentName);
+        reportParse.put("studentGrade", studentGrade);
+        reportParse.put("date", reportCreatedDate);
+        
+        // Add behavior report data.
+        reportParse.put("behavior_respectForSelfAndOthers", behavior_respectForSelfAndOthers);
+        reportParse.put("behavior_followingDirections", behavior_followingDirections);
+        reportParse.put("behavior_positiveConflictResolution", behavior_positiveConflictResolution);
+        reportParse.put("behavior_peerMediation", behavior_peerMediation);
+        reportParse.put("behavior_helpingPeerOrStaff", behavior_helpingPeerOrStaff);
+        reportParse.put("behavior_leadership", behavior_leadership);
+        reportParse.put("behavior_dealingWithAdversityPositively", behavior_dealingWithAdversityPositively);
+        reportParse.put("behavior_goingAboveAndBeyond", behavior_goingAboveAndBeyond);
+        reportParse.put("behavior_refusalToFollowDirectionsOrParticipate", behavior_refusalToFollowDirectionsOrParticipate);
+        reportParse.put("behavior_disruptionOfClassOrActivity", behavior_disruptionOfClassOrActivity);
+        reportParse.put("behavior_disrespectOfStaffOrScholars", behavior_disrespectOfStaffOrScholars);
+        reportParse.put("behavior_inappropriateLanguageOrGestures", behavior_inappropriateLanguageOrGestures);
+        reportParse.put("behavior_inappropriatePhysicalContactOrFighting", behavior_inappropriatePhysicalContactOrFighting);
+        reportParse.put("behavior_teasingOrInstigatingConflict", behavior_teasingOrInstigatingConflict);
+        reportParse.put("behavior_runningInCommonSpaces", behavior_runningInCommonSpaces);
+        reportParse.put("behavior_leavingSupervisionUnattended", behavior_leavingSupervisionUnattended);
+        reportParse.put("behavior_failingToFollowRules", behavior_failingToFollowRules);
+        reportParse.put("behavior_setting", behaviorSetting);
+        
+        // Add academic data.
+        reportParse.put("academic_respectsLearningForSelfAndOthers", academic_respectsLearningForSelfAndOthers);
+        reportParse.put("academic_followsDirections", academic_followsDirections);
+        reportParse.put("academic_consistentlyPreparedAndOrganized", academic_consistentlyPreparedAndOrganized);
+        reportParse.put("academic_completesHomeworkAndAssignments", academic_completesHomeworkAndAssignments);
+        reportParse.put("academic_staysOnTask", academic_staysOnTask);
+        reportParse.put("academic_peerTutoring", academic_peerTutoring);
+        reportParse.put("academic_struggles", academic_struggles);
+        reportParse.put("academic_disruptionOfClassLessonActivity", academic_disruptionOfClassLessonActivity);
+        reportParse.put("academic_refusalToFollowDirectionsAndParticipate", academic_refusalToFollowDirectionsAndParticipate);
+        reportParse.put("academic_unPreparedAndDisorganized", academic_unPreparedAndDisorganized);
+        reportParse.put("academic_failureToCompleteHomeworkAssignment", academic_failureToCompleteHomeworkAssignment);
+        reportParse.put("academic_questionableAcademicIntegrity", academic_questionableAcademicIntegrity);
+        reportParse.put("academic_other", academic_other);
+        
+        // Add strategy data.
+        reportParse.put("strategy_plannedIgnoring", strategy_plannedIgnoring);
+        reportParse.put("strategy_behaviorLog", strategy_behaviorLog);
+        reportParse.put("strategy_reteachReviewExpectations", strategy_reteachReviewExpectations);
+        reportParse.put("strategy_restorativeAction", strategy_restorativeAction);
+        reportParse.put("strategy_apologyVerbalAndOrWritten", strategy_apologyVerbalAndOrWritten);
+        reportParse.put("strategy_scholarPairingTimeOut", strategy_scholarPairingTimeOut);
+        reportParse.put("strategy_timeOut", strategy_timeOut);
+        reportParse.put("strategy_ageAppropriateWritingActivity", strategy_ageAppropriateWritingActivity);
+        reportParse.put("strategy_behaviorProcessingForm", strategy_behaviorProcessingForm);
+        reportParse.put("strategy_teacherScholarConversationOutsideClassroom", strategy_teacherScholarConversationOutsideClassroom);
+        reportParse.put("strategy_conversationWithFamily", strategy_conversationWithFamily);
+        reportParse.put("strategy_conference", strategy_conference);
+        reportParse.put("strategy_lossOfPriveleges", strategy_lossOfPriveleges);
+        reportParse.put("strategy_other", strategy_other);
+        
+        reportParse.put("report_details", reportDetailsAndComments);
+        return reportParse;
+    }
+    
+    @Override
+    public String toString() {
+        return this.studentName + " " + this.reportCreatedDate;
+        
+    }
+    
 	@Override
 	public int describeContents() {
 		// TODO Auto-generated method stub
