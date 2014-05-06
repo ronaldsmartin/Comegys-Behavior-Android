@@ -240,7 +240,7 @@
             android:onClick="onCheckboxClicked"/>
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/positive" />
+            android:text="@string/positive" /> 
             <!-- 7 -->
         <CheckBox android:id="@+id/checkbox_academic_struggles"
             android:layout_width="wrap_content"

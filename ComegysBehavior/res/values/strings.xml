@@ -15,7 +15,7 @@
     <string name="negative">Negative</string>
     <string name="strategies">Strategies / Interventions Used By Staff</string>
     <string name="location">Setting</string>
-    <string name="comments">Comments</string>
+    <string name="comments">Comments</string> 
     
     
         <string name="strategy_plannedIgnoring">Planned ignoring (differential attention)</string>
