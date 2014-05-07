@@ -53,7 +53,25 @@
     <!-- checkboxes for behavior report -->
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="?android:attr/listSeparatorTextViewStyle" 
         android:text="@string/b_report" />
+    
+     <!-- drop-down for behavior setting -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location" />
+    <Spinner
+        android:id="@+id/behavior_settings_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/settings_array" />
+        
+    </LinearLayout>   
+    
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/positive" />
@@ -177,7 +195,15 @@
     </LinearLayout>
         
     
-    <!-- drop-down for behavior setting -->
+    
+        
+    <!-- checkboxes for academic report -->
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/listSeparatorTextViewStyle" 
+        android:text="@string/a_report" />
+    
+     <!-- // drop-down for academic setting-->
     <LinearLayout android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -186,17 +212,12 @@
         android:layout_height="wrap_content"
         android:text="@string/location" />
     <Spinner
-        android:id="@+id/behavior_settings_spinner"
+        android:id="@+id/academic_settings_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/settings_array" />
         
-    </LinearLayout>    
-        
-    <!-- checkboxes for academic report -->
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/a_report" />
+    </LinearLayout>
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/positive" />
@@ -239,7 +260,7 @@
         android:onClick="onCheckboxClicked"/>
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/positive" /> 
+        android:text="@string/negative" /> 
         <!-- 7 -->
     <CheckBox android:id="@+id/checkbox_academic_struggles"
         android:layout_width="wrap_content"
@@ -294,26 +315,13 @@
         
     
     
-    // drop-down for academic setting
-    <LinearLayout android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/location" />
-    <Spinner
-        android:id="@+id/academic_settings_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:entries="@array/settings_array" />
-        
-    </LinearLayout>
+ 
 
-    // checkboxes for suggested strategies
+   <!-- checkboxes for suggested strategies-->
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="?android:attr/listSeparatorTextViewStyle" 
         android:text="@string/strategies" />
         <!-- 1 -->
     <CheckBox android:id="@+id/checkbox_strategy_plannedIgnoring"
