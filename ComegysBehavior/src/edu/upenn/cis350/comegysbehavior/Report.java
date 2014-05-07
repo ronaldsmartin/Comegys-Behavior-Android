@@ -323,5 +323,30 @@ public class Report implements Parcelable {
 			return new Report[size];
 		}
 	};
+	
+
+    public String createEmailReportString() {
+        String report = "Student Behavior Report \n";
+        report = report + "\nName: " + studentName;
+        report = report + "\nGrade: " + studentGrade;
+        report = report + "\nDate: " + reportCreatedDate;
+        if (!behaviorSummary.equals("")) {
+            report = report + "\n\nBehavior Summary: \n" + behaviorSummary;
+            report = report + "\nSetting: " + behaviorSetting;
+            report = report + "\n" + behaviorComment;
+        }
+        if (!academicSummary.equals("")) {
+            report = report + "\n\nAcademic Summary: \n" + academicSummary;
+            report = report + "\nSetting: " + academicSetting;
+            report = report + "\n" + academicComment;
+        }
+        if (!strategySummary.equals("")) {
+            report = report + "\n\nStrategy Summary: \n" + strategySummary;
+            report = report + "\n" + strategyComment;
+        }
+        
+        return report;
+    }
+    
 
 }
