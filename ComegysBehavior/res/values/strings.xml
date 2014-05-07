@@ -5,6 +5,10 @@
     <string name="action_settings">Settings</string>
     <string name="title_section1">Form</string>
     <string name="title_section2">Reports</string>
+    <string name="past_reports">Past Reports</string>
+    <string name="details">Details:</string>
+    <string name="send_email">Send Email</string>
+    <string name="delete_report">Delete Report</string> 
     
     <string name="scholar_name">Scholar Name</string>
     <string name="grade">Grade</string>
@@ -16,6 +20,7 @@
     <string name="strategies">Strategies / Interventions Used By Staff</string>
     <string name="location">Setting</string>
     <string name="comments">Comments</string> 
+    
     
     
         <string name="strategy_plannedIgnoring">Planned ignoring (differential attention)</string>
