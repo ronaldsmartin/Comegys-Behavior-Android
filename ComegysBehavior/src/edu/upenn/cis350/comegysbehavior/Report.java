@@ -153,6 +153,7 @@ public class Report implements Parcelable {
     
     private void retrieveAcademicData(ParseObject parseObject) {
         // Retrieve academic data.
+    	this.academicSetting = parseObject.getString("academic_setting");
         this.academic_respectsLearningForSelfAndOthers = parseObject.getBoolean("academic_respectsLearningForSelfAndOthers");
         this.academic_followsDirections = parseObject.getBoolean("academic_followsDirections");
         this.academic_consistentlyPreparedAndOrganized = parseObject.getBoolean("academic_consistentlyPreparedAndOrganized");
