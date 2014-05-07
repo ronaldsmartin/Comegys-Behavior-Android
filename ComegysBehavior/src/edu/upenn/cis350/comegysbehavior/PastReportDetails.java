@@ -2,6 +2,15 @@ package edu.upenn.cis350.comegysbehavior;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import edu.upenn.cis350.comegysbehavior.ReportsListFragment.ReportNameComparator;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -88,11 +97,35 @@ public class PastReportDetails extends Activity {
 		final Button button = (Button) findViewById(R.id.email_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-           
-           	 getUserEmailPrompt();
+            	getUserEmailPrompt();
             }
         });
 	
+       final Button deleteButton = (Button) findViewById(R.id.delete_button);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	System.out.println("Delete button clicked");
+            	ParseQuery<ParseObject> query = ParseQuery.getQuery("Report");
+            	query.whereEqualTo("objectId", pastReport.objectID);
+        		query.findInBackground(new FindCallback<ParseObject>() {
+        			@Override
+        			public void done(List<ParseObject> parseReportList, ParseException e) {
+        				if (e == null)
+							try {
+								System.out.println(pastReport.objectID + "HIIIIDDNKSJ");
+								if (parseReportList.size() > 0) {
+									parseReportList.get(0).delete();
+									finish();
+									
+								}
+							} catch (ParseException e1) {
+								e1.printStackTrace();
+							}
+        			}
+        		});
+            }
+        });	
+         
 	}
 	
 	protected void sendEmail(String emailAddress) {

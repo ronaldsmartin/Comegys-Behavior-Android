@@ -14,6 +14,7 @@ import com.parse.ParseObject;
  */
 public class Report implements Parcelable {
 	
+	public String objectID = "";
 	// Subject Info
 	public String studentName       = "";
 	public String studentGrade      = "";
@@ -103,6 +104,9 @@ public class Report implements Parcelable {
         this.studentName       = parseObject.getString("studentName");
         this.studentGrade      = parseObject.getString("studentGrade");
         this.reportCreatedDate = parseObject.getString("date");
+        this.objectID = parseObject.getObjectId();
+        
+       
         
         retrieveBehaviorData(parseObject);
         
@@ -260,6 +264,8 @@ public class Report implements Parcelable {
         reportParse.put("academic_details", this.academicSummary);
         reportParse.put("strategy_details", this.strategySummary);
         
+        reportParse.put("object_id", this.objectID);
+        
         return reportParse;
     }
     
@@ -288,6 +294,7 @@ public class Report implements Parcelable {
 		out.writeString(this.strategySummary);
 		out.writeString(this.strategyComment);
 		out.writeString(this.reportDetailsAndComments);
+		out.writeString(this.objectID);
 	}
 	
 	private Report(Parcel in) {
@@ -303,6 +310,7 @@ public class Report implements Parcelable {
 		this.strategySummary          = in.readString();
 		this.strategyComment		  = in.readString();
 		this.reportDetailsAndComments = in.readString();
+		this.objectID			 	  = in.readString();
 	}
 
 	public static final Parcelable.Creator<Report> CREATOR
