@@ -335,17 +335,17 @@ public class Report implements Parcelable {
         report = report + "\nDate: " + reportCreatedDate;
         if (!behaviorSummary.equals("")) {
             report = report + "\n\nBehavior Summary: \n" + behaviorSummary;
-            report = report + "\nSetting: " + behaviorSetting;
-            report = report + "\n" + behaviorComment;
+            if (!behaviorSetting.equals("")) report = report + "\nSetting: " + behaviorSetting;
+            if (!behaviorComment.equals("")) report = report + "\n\nComments: " + behaviorComment;
         }
         if (!academicSummary.equals("")) {
             report = report + "\n\nAcademic Summary: \n" + academicSummary;
-            report = report + "\nSetting: " + academicSetting;
-            report = report + "\n" + academicComment;
+            if (!academicSetting.equals("")) report = report + "\nSetting: " + academicSetting;
+            if (!academicComment.equals(""))report = report + "\n\nComments: " + academicComment;
         }
         if (!strategySummary.equals("")) {
             report = report + "\n\nStrategy Summary: \n" + strategySummary;
-            report = report + "\n" + strategyComment;
+            if (!strategyComment.equals(""))report = report + "\n\nComments: " + strategyComment;
         }
         
         return report;
