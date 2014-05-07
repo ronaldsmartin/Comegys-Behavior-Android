@@ -88,10 +88,7 @@ public class BehaviorFragment extends Fragment {
 	    // Check which checkbox was clicked
 	    switch(view.getId()) {
 	        case R.id.checkbox_behavior_respectForSelfAndOthers:
-	            if (checked)
-	            	report.behavior_respectForSelfAndOthers = true;
-	            else
-	            	report.behavior_respectForSelfAndOthers = false;
+	        	this.report.behavior_respectForSelfAndOthers = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_followingDirections:

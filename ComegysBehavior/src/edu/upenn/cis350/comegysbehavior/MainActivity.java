@@ -135,6 +135,9 @@ public class MainActivity extends FragmentActivity implements
 	 */
 	public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
+		private Fragment reportFragment = new BehaviorFragment();
+		private Fragment reportsListFragment = new ReportsListFragment();
+		
 		public SectionsPagerAdapter(FragmentManager fm) {
 			super(fm);
 		}
@@ -145,19 +148,20 @@ public class MainActivity extends FragmentActivity implements
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a StrategySectionFragment (defined as a static inner class
 			// below) with the page number as its lone argument.
-			if (position == 0) {
-				Fragment fragment = new BehaviorFragment();
-				return fragment;
-			} else {
-				Fragment fragment = new ReportsListFragment();
-				return fragment;
+			switch (position) {
+			case 0:
+				return this.reportFragment;
+			case 1:
+				return this.reportsListFragment;
+			default:
+				return null;
 			}
 			
 		}
 
 		@Override
 		public int getCount() {
-			// Show 2 total pages.
+			// Show two total pages.
 			return 2;
 		}
 
