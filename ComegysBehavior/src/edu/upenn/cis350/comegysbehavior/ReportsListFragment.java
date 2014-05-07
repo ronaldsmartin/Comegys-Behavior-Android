@@ -75,7 +75,7 @@ public class ReportsListFragment extends Fragment {
 	}
 	
 	
-	protected void refreshReports() {
+	public void refreshReports() {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Report");
 		query.findInBackground(new FindCallback<ParseObject>() {
 			@Override

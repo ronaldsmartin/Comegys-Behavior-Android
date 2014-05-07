@@ -105,6 +105,10 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public void onTabReselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
+		if (tab.getPosition() == 1) {
+			ReportsListFragment reportsList = (ReportsListFragment) mSectionsPagerAdapter.getItem(1);
+			reportsList.refreshReports();
+		}
 	}
 	
 	public void onCheckboxClicked(View view) {
