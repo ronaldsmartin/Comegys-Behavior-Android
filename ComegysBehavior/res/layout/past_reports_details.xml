@@ -141,12 +141,28 @@
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_gravity="left"
-		                android:text = "This is a Report Checkbox line what happens when i go over\nThere are multiple lines\nThis is one more thing"
+		                android:text = "This is a CheckBox Line"
+		                android:fontFamily="sans-serif-light" />
+				<TextView
+	                android:layout_gravity="left"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:fontFamily="sans-serif-light"
+	                style="@android:style/TextAppearance.Medium"
+	                android:text="@string/comments" />
+
+				<TextView android:id="@+id/behavior_report_comments"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="left"
+		             	android:text = "This is a comment"
+		                
 		                android:fontFamily="sans-serif-light" />
 			</LinearLayout>
 
 	        
-	    <!--Acedemic Report -->
+	    <!--Academic Report -->
 	        <TextView 
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
@@ -191,11 +207,27 @@
 	                style="@android:style/TextAppearance.Medium"
 	                android:text="@string/details" />
 
-				<TextView android:id="@+id/acedemic_details"
+				<TextView android:id="@+id/academic_report_details"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_gravity="left"
 		                android:text = "This is a Report Checkbox line what happens when i go over\nThere are multiple lines\nThis is one more thing"
+		                
+		                android:fontFamily="sans-serif-light" />
+				<TextView
+	                android:layout_gravity="left"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:fontFamily="sans-serif-light"
+	                style="@android:style/TextAppearance.Medium"
+	                android:text="@string/comments" />
+
+				<TextView android:id="@+id/academic_report_comments"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="left"
+		             	android:text = "This is a comment"
 		                
 		                android:fontFamily="sans-serif-light" />
 			</LinearLayout>
@@ -223,38 +255,32 @@
 	                style="@android:style/TextAppearance.Medium"
 	                android:text="@string/details" />
 
-				<TextView android:id="@+id/strategies_details"
+				<TextView android:id="@+id/strategies_report_details"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_gravity="left"
-		             	android:text = "This is a Report Checkbox line what happens when i go over\nThere are multiple lines\nThis is one more thing"
+		             	android:text = "This is a Checkbox line "
+		                
+		                android:fontFamily="sans-serif-light" />
+				<TextView
+	                android:layout_gravity="left"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_weight="1"
+	                android:fontFamily="sans-serif-light"
+	                style="@android:style/TextAppearance.Medium"
+	                android:text="@string/comments" />
+
+				<TextView android:id="@+id/strategies_report_comments"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="left"
+		             	android:text = "This is a comment"
 		                
 		                android:fontFamily="sans-serif-light" />
 			</LinearLayout>
 			
-			    <!-- Comments -->
-        <TextView 
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/comments"
-		 
-	        style="?android:attr/listSeparatorTextViewStyle" />
-
-        	<LinearLayout 
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:padding="10dip"
-			    android:orientation="vertical" >
-
-				<TextView android:id="@+id/comments_details"
-		                android:layout_width="wrap_content"
-		                android:layout_height="wrap_content"
-		                android:layout_gravity="left"
-		             	android:text = "This is a Report Checkbox line what happens when i go over\nThere are multiple lines\nThis is one more thing"
-		                
-		                android:fontFamily="sans-serif-light" />
-			</LinearLayout>
-			
+			   
         <LinearLayout 
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
