@@ -83,9 +83,6 @@ public class BehaviorFragment extends Fragment {
             	setReportComments();
             	setReportSettings();
             	setReportSummaries(rootView);
-            	Log.d("BehaviorFragment", "BehaviorSummary: " + report.behaviorSummary);
-            	Log.d("BehaviorFragment", "AcademicSummary: " + report.academicSummary);
-            	Log.d("BehaviorFragment", "StrategySummary: " + report.strategySummary);
             	 
             	// Save in background
             	report.getParseObject().saveInBackground();
@@ -127,8 +124,10 @@ public class BehaviorFragment extends Fragment {
 		StringBuilder summaryBuilder = new StringBuilder();
 		for (int i = 0; i < resIDs.length; ++i) {
 			CheckBox checkbox = (CheckBox) rootView.findViewById(resIDs[i]);
-			summaryBuilder.append(checkbox.getText());
-			summaryBuilder.append('\n');
+			if (checkbox.isChecked()) {
+				summaryBuilder.append(checkbox.getText());
+				summaryBuilder.append('\n');
+			}
 		}
 		return summaryBuilder.toString();
 	}

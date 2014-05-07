@@ -95,29 +95,30 @@ public class PastReportDetails extends Activity {
 	
 	}
 	
-protected void sendEmail(String emailAddress) {
-		      Log.i("Send email", "");
+	protected void sendEmail(String emailAddress) {
+	      Log.i("Send email", "");
 
-		      String[] TO = {emailAddress};
-		      String[] CC = {};
-		      Intent emailIntent = new Intent(Intent.ACTION_SEND);
-		      emailIntent.setData(Uri.parse("mailto:"));
-		      emailIntent.setType("text/plain");
+	      String[] TO = {emailAddress};
+	      String[] CC = {};
+	      Intent emailIntent = new Intent(Intent.ACTION_SEND);
+	      emailIntent.setData(Uri.parse("mailto:"));
+	      emailIntent.setType("text/plain");
 
 
-		      emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-		      emailIntent.putExtra(Intent.EXTRA_CC, CC);
-		      emailIntent.putExtra(Intent.EXTRA_SUBJECT, "New Student Behavior Report");
-		      emailIntent.putExtra(Intent.EXTRA_TEXT, pastReport.createEmailReportString());
+	      emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+	      emailIntent.putExtra(Intent.EXTRA_CC, CC);
+	      emailIntent.putExtra(Intent.EXTRA_SUBJECT, "New Student Behavior Report");
+	      emailIntent.putExtra(Intent.EXTRA_TEXT, pastReport.createEmailReportString());
 
-		      try {
-		         startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-		         
-		         Log.i("Finished sending email...", "");
-		      } catch (android.content.ActivityNotFoundException ex) {
-		         Toast.makeText(this, 
-		         "There is no email client installed.", Toast.LENGTH_SHORT).show();}
-		      }
+	      try {
+	         startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+	         
+	         Log.i("Finished sending email...", "");
+	      } catch (android.content.ActivityNotFoundException ex) {
+	         Toast.makeText(this, 
+	         "There is no email client installed.", Toast.LENGTH_SHORT).show();
+	      }
+	}
 	
 	private void getUserEmailPrompt() {
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);

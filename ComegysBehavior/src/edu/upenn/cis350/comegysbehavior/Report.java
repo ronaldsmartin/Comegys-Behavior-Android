@@ -116,8 +116,7 @@ public class Report implements Parcelable {
         this.strategyComment = parseObject.getString("strategy_comments");
         this.behaviorSummary = parseObject.getString("behavior_details");
         this.academicSummary = parseObject.getString("academic_details");
-        this.strategySummary= parseObject.getString("strategy_details");
-        createSummaries();
+        this.strategySummary = parseObject.getString("strategy_details");
     }
     
     private void retrieveBehaviorData(ParseObject parseObject) {
@@ -187,7 +186,6 @@ public class Report implements Parcelable {
      * Return this Report as a Parse Object to push to the database.
      */
     public ParseObject getParseObject() {
-    	createSummaries();
     	
         ParseObject reportParse = new ParseObject("Report");
         // Add report subject info.
@@ -263,10 +261,6 @@ public class Report implements Parcelable {
         reportParse.put("strategy_details", this.strategySummary);
         
         return reportParse;
-    }
-    
-    private void createSummaries() {
-    	
     }
     
     @Override
