@@ -16,7 +16,7 @@
         android:textAllCaps="true"
         android:textStyle="bold"
        
-        android:text="Past Report"
+        android:text="@string/past_reports"
         style="@android:style/TextAppearance.Large"  />
     
     <!-- Content -->
@@ -57,7 +57,7 @@
 	                android:layout_weight="1"
 	                android:fontFamily="sans-serif-light"
 	                style="@android:style/TextAppearance.Medium"
-	                android:text="Grade: " />
+	                android:text="@string/grade" />
 
 				<TextView android:id="@+id/grade"
 				    	android:text = "1st"
@@ -80,12 +80,13 @@
 	                android:layout_weight="1"
 	                android:fontFamily="sans-serif-light"
 	                style="@android:style/TextAppearance.Medium"
-	                android:text="Report Date: " />
+	                android:text="@string/date" />
 
 				<TextView android:id="@+id/date"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_gravity="right"
+		                android:text="05/01/14"
 		                android:fontFamily="sans-serif-light"
 		                />
 			</LinearLayout>
@@ -110,7 +111,7 @@
 	                android:layout_weight="1"
 	                android:fontFamily="sans-serif-light"
 	                style="@android:style/TextAppearance.Medium"
-	                android:text="Location: " />
+	                android:text="@string/location" />
 
 				<TextView android:id="@+id/behavior_location"
 				    	android:text ="Classroom"
@@ -134,7 +135,7 @@
 	                android:layout_weight="1"
 	                android:fontFamily="sans-serif-light"
 	                style="@android:style/TextAppearance.Medium"
-	                android:text="Details" />
+	                android:text="@string/details" />
 			
 				<TextView android:id="@+id/behavior_report_details"
 		                android:layout_width="wrap_content"
@@ -149,7 +150,7 @@
 	        <TextView 
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:text="Academic Report"
+		        android:text="@string/a_report"
 		      
 		        style="?android:attr/listSeparatorTextViewStyle" />
 
@@ -165,7 +166,7 @@
 	                android:layout_weight="1"
 	                android:fontFamily="sans-serif-light"
 	                style="@android:style/TextAppearance.Medium"
-	                android:text="Location: " />
+	                android:text="@string/location" />
 
 				<TextView android:id="@+id/academic_location"
 				    	android:text = "Classroom"
@@ -188,7 +189,7 @@
 	                android:layout_weight="1"
 	                android:fontFamily="sans-serif-light"
 	                style="@android:style/TextAppearance.Medium"
-	                android:text="Details: " />
+	                android:text="@string/details" />
 
 				<TextView android:id="@+id/acedemic_details"
 		                android:layout_width="wrap_content"
@@ -204,7 +205,7 @@
         <TextView 
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
-	        android:text="Strategies"
+	        android:text="@string/strategies"
 		 
 	        style="?android:attr/listSeparatorTextViewStyle" />
 
@@ -220,7 +221,7 @@
 	                android:layout_weight="1"
 	                android:fontFamily="sans-serif-light"
 	                style="@android:style/TextAppearance.Medium"
-	                android:text="Details: " />
+	                android:text="@string/details" />
 
 				<TextView android:id="@+id/fellowship_status"
 		                android:layout_width="wrap_content"
@@ -238,18 +239,18 @@
 			    android:orientation="horizontal" >
 				<Button
 	                android:layout_gravity="left"
-	                android:layout_width="0dip"
+	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
 	                android:fontFamily="sans-serif-light"
 	                style="@android:style/TextAppearance.Medium"
-	                android:text="Delete Report" />
+	                android:text="@string/send_email" />
 
 				<Button android:id="@+id/email_button"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_gravity="right"
-						android:text= "Send Email"	                
+						android:text= "@string/delete_report"	                
 		                android:fontFamily="sans-serif-light" />
 			</LinearLayout>
 
