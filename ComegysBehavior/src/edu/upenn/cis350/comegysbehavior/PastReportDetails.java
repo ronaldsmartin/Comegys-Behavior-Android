@@ -71,7 +71,7 @@ public class PastReportDetails extends Activity {
 		strategiesLabel.setText(strategy);
 		
 		//Set strategies Comments
-		TextView strategiesComLabel = (TextView) findViewById(R.id.strategies_report_details);
+		TextView strategiesComLabel = (TextView) findViewById(R.id.strategies_report_comments);
 		String strategyCom =  pastReport.strategyComment;
 		strategiesComLabel.setText(strategyCom);
 
