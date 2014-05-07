@@ -112,6 +112,9 @@ public class Report implements Parcelable {
         retrieveStrategyData(parseObject);
         
         this.reportDetailsAndComments = parseObject.getString("report_details");
+        this.behaviorComment = parseObject.getString("behavior_comments");
+        this.academicComment = parseObject.getString("academic_comments");
+        this.strategyComment = parseObject.getString("strategy_comments");
         createSummaries();
     }
     
@@ -249,6 +252,9 @@ public class Report implements Parcelable {
         reportParse.put("strategy_other", strategy_other);
         
         reportParse.put("report_details", reportDetailsAndComments);
+        reportParse.put("behavior_comments", this.behaviorComment);
+        reportParse.put("academic_comments",this.academicComment);
+        reportParse.put("strategy_comments", this.strategyComment);
         return reportParse;
     }
     
@@ -273,8 +279,11 @@ public class Report implements Parcelable {
 		out.writeString(this.studentGrade);
 		out.writeString(this.reportCreatedDate);
 		out.writeString(this.behaviorSummary);
+		out.writeString(this.behaviorComment);
 		out.writeString(this.academicSummary);
+		out.writeString(this.academicComment);
 		out.writeString(this.strategySummary);
+		out.writeString(this.strategyComment);
 		out.writeString(this.reportDetailsAndComments);
 	}
 	
@@ -283,8 +292,11 @@ public class Report implements Parcelable {
 		this.studentGrade             = in.readString();
 		this.reportCreatedDate        = in.readString();
 		this.behaviorSummary          = in.readString();
+		this.behaviorComment		  = in.readString();
 		this.academicSummary          = in.readString();
+		this.academicComment		  = in.readString();
 		this.strategySummary          = in.readString();
+		this.strategyComment		  = in.readString();
 		this.reportDetailsAndComments = in.readString();
 	}
 

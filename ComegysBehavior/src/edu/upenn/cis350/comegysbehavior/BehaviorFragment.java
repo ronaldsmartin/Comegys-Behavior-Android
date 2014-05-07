@@ -30,7 +30,7 @@ public class BehaviorFragment extends Fragment {
 	private EditText student_name, strategy_comment, behavior_comment, academic_comment;
 	private DatePicker date;
 	
-	private static int[] checkboxBehaviorIds =
+	private static final int[] checkboxBehaviorIds =
 		{R.id.checkbox_behavior_respectForSelfAndOthers, R.id.checkbox_behavior_followingDirections,
 			R.id.checkbox_behavior_positiveConflictResolution, R.id.checkbox_behavior_peerMediation,
 			R.id.checkbox_behavior_helpingPeerOrStaff, R.id.checkbox_behavior_leadership,
@@ -40,8 +40,19 @@ public class BehaviorFragment extends Fragment {
 			R.id.checkbox_behavior_inappropriatePhysicalContactOrFighting, R.id.checkbox_behavior_teasingOrInstigatingConflict,
 			R.id.checkbox_behavior_runningInCommonSpaces, R.id.checkbox_behavior_leavingSupervisionUnattended,
 			R.id.checkbox_behavior_failingToFollowRules};
-	private static int[] checkboxAcademicIds = {};
-	private static int[] checkboxStrategyIds = {};
+	private static final int[] checkboxAcademicIds =
+		{R.id.checkbox_academic_respectsLearningForSelfAndOthers, R.id.checkbox_academic_followsDirections, 
+	    	R.id.checkbox_academic_consistentlyPreparedAndOrganized, R.id.checkbox_academic_completesHomeworkAndAssignments, 
+	    	R.id.checkbox_academic_staysOnTask, R.id.checkbox_academic_peerTutoring, R.id.checkbox_academic_disruptionOfClassLessonActivity, 
+	    	R.id.checkbox_academic_refusalToFollowDirectionsAndParticipate, R.id.checkbox_academic_unPreparedAndDisorganized, 
+	    	R.id.checkbox_academic_failureToCompleteHomeworkAssignment, R.id.checkbox_academic_questionableAcademicIntegrity};
+	private static final int[] checkboxStrategyIds =
+		{R.id.checkbox_strategy_plannedIgnoring, R.id.checkbox_strategy_behaviorLog, 
+	    	R.id.checkbox_strategy_reteachReviewExpectations, R.id.checkbox_strategy_restorativeAction, 
+	    	R.id.checkbox_strategy_apologyVerbalAndOrWritten, R.id.checkbox_strategy_scholarPairingTimeOut, 
+	    	R.id.checkbox_strategy_timeOut, R.id.checkbox_strategy_ageAppropriateWritingActivity, 
+	    	R.id.checkbox_strategy_behaviorProcessingForm, R.id.checkbox_strategy_teacherScholarConversationOutsideClassroom, 
+	    	R.id.checkbox_strategy_conversationWithFamily, R.id.checkbox_strategy_conference, R.id.checkbox_strategy_lossOfPriveleges};
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,21 +70,24 @@ public class BehaviorFragment extends Fragment {
 		return rootView;
 	}
 	
-	private void initSubmitButton(View rootView) {
+	private void initSubmitButton(final View rootView) {
 		final Button button = (Button) rootView.findViewById(R.id.submit_report_button);
         button.setOnClickListener(new View.OnClickListener() {
         	@Override
              public void onClick(View v) {
         		// 
-            	report.studentName = student_name.getText().toString();
+            	report.studentName  = student_name.getText().toString();
             	report.studentGrade = grade_spinner.getSelectedItem().toString();
             	
             	setReportDate();
             	setReportComments();
             	setReportSettings();
+            	setReportSummaries(rootView);
+            	Log.d("BehaviorFragment", "BehaviorSummary: " + report.behaviorSummary);
+            	Log.d("BehaviorFragment", "AcademicSummary: " + report.academicSummary);
+            	Log.d("BehaviorFragment", "StrategySummary: " + report.strategySummary);
             	 
-            	createSummaries();
-            	 
+            	// Save in background
             	report.getParseObject().saveInBackground();
             	 
             	Toast submittedNotification = Toast.makeText(getActivity(), "Report submitted!", Toast.LENGTH_SHORT);
@@ -93,20 +107,31 @@ public class BehaviorFragment extends Fragment {
 	}
 	
 	private void setReportComments() {
-		report.strategyComment = this.strategy_comment.getText().toString();
-    	report.academicComment = this.academic_comment.getText().toString();
-    	report.behaviorComment = this.behavior_comment.getText().toString();
+		this.report.strategyComment = this.strategy_comment.getText().toString();
+    	this.report.academicComment = this.academic_comment.getText().toString();
+    	this.report.behaviorComment = this.behavior_comment.getText().toString();
 	}
 	
 	private void setReportSettings() {
-		report.behaviorSetting = this.behavior_settings_spinner.getSelectedItem().toString();
-		report.academicSetting = this.academic_settings_spinner.getSelectedItem().toString();
+		this.report.behaviorSetting = this.behavior_settings_spinner.getSelectedItem().toString();
+		this.report.academicSetting = this.academic_settings_spinner.getSelectedItem().toString();
 	}
 	
-	private void createSummaries() {
-		
+	private void setReportSummaries(View rootView) {
+		this.report.behaviorSummary = createSummary(rootView, checkboxBehaviorIds);
+		this.report.academicSummary = createSummary(rootView, checkboxAcademicIds);
+		this.report.strategySummary = createSummary(rootView, checkboxStrategyIds);
 	}
 	
+	private static String createSummary(View rootView, int[] resIDs) {
+		StringBuilder summaryBuilder = new StringBuilder();
+		for (int i = 0; i < resIDs.length; ++i) {
+			CheckBox checkbox = (CheckBox) rootView.findViewById(resIDs[i]);
+			summaryBuilder.append(checkbox.getText());
+			summaryBuilder.append('\n');
+		}
+		return summaryBuilder.toString();
+	}
 	
 	
 	
