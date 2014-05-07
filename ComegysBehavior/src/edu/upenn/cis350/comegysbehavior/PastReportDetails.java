@@ -46,9 +46,9 @@ public class PastReportDetails extends Activity {
 		behaviorLabel.setText(behavior);
 		
 		//Set Behavior Comments
-//		TextView bCommsLabel = (TextView) findViewById(R.id.behavior_report_comments);
-//		String behaviorCom =  pastReport.behaviorComments;
-//		bCommsLabel.setText(behaviorCom);
+		TextView bCommsLabel = (TextView) findViewById(R.id.behavior_report_comments);
+		String behaviorCom =  pastReport.behaviorComment;
+		bCommsLabel.setText(behaviorCom);
 		
 		//Set Acedemic Setting
 		TextView aSettingLabel = (TextView) findViewById(R.id.academic_location);
@@ -61,9 +61,9 @@ public class PastReportDetails extends Activity {
 		academicLabel.setText(academic);
 		
 		//Set Acedemic Comments
-//		TextView academicComsLabel = (TextView) findViewById(R.id.academic_report_comments);
-//		String academicCom =  pastReport.academicComments;
-//		academicComsLabel.setText(academicCom);
+		TextView academicComsLabel = (TextView) findViewById(R.id.academic_report_comments);
+		String academicCom =  pastReport.academicComment;
+		academicComsLabel.setText(academicCom);
 		
 		//Set Strategies Details
 		TextView strategiesLabel = (TextView) findViewById(R.id.strategies_report_details);
@@ -71,9 +71,9 @@ public class PastReportDetails extends Activity {
 		strategiesLabel.setText(strategy);
 		
 		//Set strategies Comments
-//		TextView strategiesComLabel = (TextView) findViewById(R.id.strategies_report_details);
-//		String strategyCom =  pastReport.strategyComments;
-//		strategiesComLabel.setText(strategyCom);
+		TextView strategiesComLabel = (TextView) findViewById(R.id.strategies_report_details);
+		String strategyCom =  pastReport.strategyComment;
+		strategiesComLabel.setText(strategyCom);
 
 		
 	
