@@ -58,10 +58,7 @@
         android:text="@string/b_report"
         style="?android:attr/listSeparatorTextViewStyle" />
     
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/positive" />
+   
     
      <!-- drop-down for behavior setting -->
     <LinearLayout android:orientation="horizontal"
@@ -79,8 +76,9 @@
         
     </LinearLayout>   
     
-    <TextView android:layout_width="wrap_content"
+      <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/positive" />
     
     <!-- 1 -->
@@ -205,15 +203,12 @@
 	        android:layout_weight="1"/>
     </LinearLayout>
         
-    
-    
-        
     <!-- checkboxes for academic report -->
-    <TextView android:layout_width="wrap_content"
+    <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/a_report" />
-    
-     <!-- // drop-down for academic setting-->
+        android:text="@string/a_report"
+        style="?android:attr/listSeparatorTextViewStyle" />
+         <!-- // drop-down for academic setting-->
     <LinearLayout android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
@@ -227,16 +222,11 @@
 	        android:layout_height="wrap_content"
 	        android:entries="@array/settings_array" />
         
-    </LinearLayout>    
-        
-    <!-- checkboxes for academic report -->
-    <TextView android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/a_report"
-        style="?android:attr/listSeparatorTextViewStyle" />
+    </LinearLayout>
     
-    <TextView android:layout_width="wrap_content"
+   <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/positive" />
         
         <!-- 1 -->
@@ -277,6 +267,7 @@
         android:onClick="onCheckboxClicked"/>
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/negative" /> 
         <!-- 7 -->
     <CheckBox android:id="@+id/checkbox_academic_struggles"
