@@ -40,6 +40,7 @@
         
         
     <string-array name="settings_array">
+           <item > </item>
            <item>classroom</item>
            <item>hallway/stairs</item>
            <item>bathroom</item>
