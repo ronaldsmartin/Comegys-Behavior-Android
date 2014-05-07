@@ -223,7 +223,30 @@
 	                style="@android:style/TextAppearance.Medium"
 	                android:text="@string/details" />
 
-				<TextView android:id="@+id/fellowship_status"
+				<TextView android:id="@+id/strategies_details"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:layout_gravity="left"
+		             	android:text = "This is a Report Checkbox line what happens when i go over\nThere are multiple lines\nThis is one more thing"
+		                
+		                android:fontFamily="sans-serif-light" />
+			</LinearLayout>
+			
+			    <!-- Comments -->
+        <TextView 
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/comments"
+		 
+	        style="?android:attr/listSeparatorTextViewStyle" />
+
+        	<LinearLayout 
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:padding="10dip"
+			    android:orientation="vertical" >
+
+				<TextView android:id="@+id/comments_details"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_gravity="left"
