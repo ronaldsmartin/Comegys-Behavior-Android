@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 /**
  * Fragment that shows behavior report
@@ -29,7 +30,16 @@ public class BehaviorFragment extends Fragment {
 	private EditText student_name, strategy_comment, behavior_comment, academic_comment;
 	private DatePicker date;
 	
-	private static int[] checkboxBehaviorIds = {};
+	private static int[] checkboxBehaviorIds =
+		{R.id.checkbox_behavior_respectForSelfAndOthers, R.id.checkbox_behavior_followingDirections,
+			R.id.checkbox_behavior_positiveConflictResolution, R.id.checkbox_behavior_peerMediation,
+			R.id.checkbox_behavior_helpingPeerOrStaff, R.id.checkbox_behavior_leadership,
+			R.id.checkbox_behavior_dealingWithAdversityPositively, R.id.checkbox_behavior_goingAboveAndBeyond,
+			R.id.checkbox_behavior_refusalToFollowDirectionsOrParticipate, R.id.checkbox_behavior_disruptionOfClassOrActivity,
+			R.id.checkbox_behavior_disrespectOfStaffOrScholars, R.id.checkbox_behavior_inappropriateLanguageOrGestures,
+			R.id.checkbox_behavior_inappropriatePhysicalContactOrFighting, R.id.checkbox_behavior_teasingOrInstigatingConflict,
+			R.id.checkbox_behavior_runningInCommonSpaces, R.id.checkbox_behavior_leavingSupervisionUnattended,
+			R.id.checkbox_behavior_failingToFollowRules};
 	private static int[] checkboxAcademicIds = {};
 	private static int[] checkboxStrategyIds = {};
 	
@@ -37,48 +47,67 @@ public class BehaviorFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.report, container, false);
-		setSpinnerContent(rootView);
+		initSpinnerContent(rootView);
+		initSubmitButton(rootView);
 		
-		student_name = (EditText) rootView.findViewById(R.id.scholar_name);
+		student_name     = (EditText) rootView.findViewById(R.id.scholar_name);
 		strategy_comment = (EditText) rootView.findViewById(R.id.strategy_comment);
 		academic_comment = (EditText) rootView.findViewById(R.id.academic_comment);
 		behavior_comment = (EditText) rootView.findViewById(R.id.behavior_comment);
 		date = (DatePicker) rootView.findViewById(R.id.SelectDate);
 		
+		return rootView;
+	}
+	
+	private void initSubmitButton(View rootView) {
 		final Button button = (Button) rootView.findViewById(R.id.submit_report_button);
-         button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
+        	@Override
              public void onClick(View v) {
-            	 Log.d("DAS BUTTON", "WORKS");
-            	 String studentName = student_name.getText().toString();
-            	 report.studentName = studentName;
-            	 String studentGrade = grade_spinner.getSelectedItem().toString();
-            	 report.studentGrade = studentGrade;
-            	 String strategyComment = strategy_comment.getText().toString();
-            	 report.strategyComment = strategyComment;
-            	 String academicComment = academic_comment.getText().toString();
-            	 report.academicComment = academicComment;
-            	 String behaviorComment = behavior_comment.getText().toString();
-            	 report.behaviorComment = behaviorComment;
-            	 int day = date.getDayOfMonth();
-            	 int month = date.getMonth();
-            	 int year =  date.getYear();
-
-            	 Calendar calendar = Calendar.getInstance();
-            	 calendar.set(year, month, day);
-            	 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
-            	 String dateOfInfraction = sdf.format(calendar.getTime());
+        		// 
+            	report.studentName = student_name.getText().toString();
+            	report.studentGrade = grade_spinner.getSelectedItem().toString();
+            	
+            	setReportDate();
+            	setReportComments();
+            	setReportSettings();
             	 
-
-            	 report.getParseObject().saveInBackground();
+            	createSummaries();
+            	 
+            	report.getParseObject().saveInBackground();
+            	 
+            	Toast submittedNotification = Toast.makeText(getActivity(), "Report submitted!", Toast.LENGTH_SHORT);
+            	submittedNotification.show();
              }
          });
-		
-		return rootView;
+	}
+	
+	private void setReportDate() {
+		int day = date.getDayOfMonth();
+   		int month = date.getMonth();
+   		int year =  date.getYear();
+   		Calendar calendar = Calendar.getInstance();
+   		calendar.set(year, month, day);
+   		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+   		report.reportCreatedDate = sdf.format(calendar.getTime());
+	}
+	
+	private void setReportComments() {
+		report.strategyComment = this.strategy_comment.getText().toString();
+    	report.academicComment = this.academic_comment.getText().toString();
+    	report.behaviorComment = this.behavior_comment.getText().toString();
+	}
+	
+	private void setReportSettings() {
+		report.behaviorSetting = this.behavior_settings_spinner.getSelectedItem().toString();
+		report.academicSetting = this.academic_settings_spinner.getSelectedItem().toString();
 	}
 	
 	private void createSummaries() {
 		
 	}
+	
+	
 	
 	
 	public void onCheckboxClicked(View view) {
@@ -87,304 +116,182 @@ public class BehaviorFragment extends Fragment {
 	    
 	    // Check which checkbox was clicked
 	    switch(view.getId()) {
+	    	// Behavior Checkboxes
 	        case R.id.checkbox_behavior_respectForSelfAndOthers:
 	        	this.report.behavior_respectForSelfAndOthers = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_followingDirections:
-	        	if (checked)
-	            	report.behavior_followingDirections = true;
-	            else
-	            	report.behavior_followingDirections = false;    
+	        	this.report.behavior_followingDirections = checked; 
 	            break;
 	            
 	        case R.id.checkbox_behavior_positiveConflictResolution:
-	            if (checked)
-	            	report.behavior_positiveConflictResolution = true;
-	            else
-	            	report.behavior_positiveConflictResolution = false; 
+	        	this.report.behavior_positiveConflictResolution = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_peerMediation:
-	            if (checked)
-	            	report.behavior_peerMediation = true;
-	            else
-	            	report.behavior_peerMediation = false;  
+	        	this.report.behavior_peerMediation = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_helpingPeerOrStaff:
-	            if (checked)
-	            	report.behavior_helpingPeerOrStaff = true;
-	            else
-	            	report.behavior_helpingPeerOrStaff = false;  
+	        	this.report.behavior_helpingPeerOrStaff = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_leadership:
-	            if (checked)
-	            	report.behavior_leadership = true;
-	            else
-	            	report.behavior_leadership = false;  
+	        	this.report.behavior_leadership = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_dealingWithAdversityPositively:
-	            if (checked)
-	            	report.behavior_dealingWithAdversityPositively = true;
-	            else
-	            	report.behavior_dealingWithAdversityPositively = false;  
+	        	this.report.behavior_dealingWithAdversityPositively = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_goingAboveAndBeyond:
-	            if (checked)
-	            	report.behavior_goingAboveAndBeyond = true;
-	            else
-	            	report.behavior_goingAboveAndBeyond = false;  
+	        	this.report.behavior_goingAboveAndBeyond = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_refusalToFollowDirectionsOrParticipate:
-	            if (checked)
-	            	report.behavior_refusalToFollowDirectionsOrParticipate = true;
-	            else
-	            	report.behavior_refusalToFollowDirectionsOrParticipate = false;  
+	        	this.report.behavior_refusalToFollowDirectionsOrParticipate = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_disruptionOfClassOrActivity:
-	            if (checked)
-	            	report.behavior_disruptionOfClassOrActivity = true;
-	            else
-	            	report.behavior_disruptionOfClassOrActivity = false;  
+	        	this.report.behavior_disruptionOfClassOrActivity = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_disrespectOfStaffOrScholars:
-	            if (checked)
-	            	report.behavior_disrespectOfStaffOrScholars = true;
-	            else
-	            	report.behavior_disrespectOfStaffOrScholars = false;  
+	        	this.report.behavior_disrespectOfStaffOrScholars = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_inappropriateLanguageOrGestures:
-	            if (checked)
-	            	report.behavior_inappropriateLanguageOrGestures = true;
-	            else
-	            	report.behavior_inappropriateLanguageOrGestures = false;  
+	        	this.report.behavior_inappropriateLanguageOrGestures = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_inappropriatePhysicalContactOrFighting:
-	            if (checked)
-	            	report.behavior_inappropriatePhysicalContactOrFighting = true;
-	            else
-	            	report.behavior_inappropriatePhysicalContactOrFighting = false;  
+	        	this.report.behavior_inappropriatePhysicalContactOrFighting = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_teasingOrInstigatingConflict:
-	            if (checked)
-	            	report.behavior_teasingOrInstigatingConflict = true;
-	            else
-	            	report.behavior_teasingOrInstigatingConflict = false;  
+	        	this.report.behavior_teasingOrInstigatingConflict = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_runningInCommonSpaces:
-	            if (checked)
-	            	report.behavior_runningInCommonSpaces = true;
-	            else
-	            	report.behavior_runningInCommonSpaces = false;  
+	        	this.report.behavior_runningInCommonSpaces = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_leavingSupervisionUnattended:
-	            if (checked)
-	            	report.behavior_leavingSupervisionUnattended = true;
-	            else
-	            	report.behavior_leavingSupervisionUnattended = false;  
+	        	this.report.behavior_leavingSupervisionUnattended = checked;
 	            break;
 	            
 	        case R.id.checkbox_behavior_failingToFollowRules:
-	            if (checked)
-	            	report.behavior_failingToFollowRules = true;
-	            else
-	            	report.behavior_failingToFollowRules = false;  
+	        	this.report.behavior_failingToFollowRules = checked;
 	            break;
 	            
 	        
-	            // academic
+	        // Academic Checkboxes
 	        case R.id.checkbox_academic_respectsLearningForSelfAndOthers:
-	            if (checked)
-	            	report.academic_respectsLearningForSelfAndOthers = true;
-	            else
-	            	report.academic_respectsLearningForSelfAndOthers = false;  
+	        	this.report.academic_respectsLearningForSelfAndOthers = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_followsDirections:
-	            if (checked)
-	            	report.academic_followsDirections = true;
-	            else
-	            	report.academic_followsDirections = false;  
+	        	this.report.academic_followsDirections = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_consistentlyPreparedAndOrganized:
-	            if (checked)
-	            	report.academic_consistentlyPreparedAndOrganized = true;
-	            else
-	            	report.academic_consistentlyPreparedAndOrganized = false;  
+	        	this.report.academic_consistentlyPreparedAndOrganized = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_completesHomeworkAndAssignments:
-	            if (checked)
-	            	report.academic_completesHomeworkAndAssignments = true;
-	            else
-	            	report.academic_completesHomeworkAndAssignments = false;  
+	        	this.report.academic_completesHomeworkAndAssignments = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_staysOnTask:
-	            if (checked)
-	            	report.academic_staysOnTask = true;
-	            else
-	            	report.academic_staysOnTask = false;  
+	        	this.report.academic_staysOnTask = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_peerTutoring:
-	            if (checked)
-	            	report.academic_peerTutoring = true;
-	            else
-	            	report.academic_peerTutoring = false;  
+	        	this.report.academic_peerTutoring = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_struggles:
-	            if (checked)
-	            	report.academic_struggles = true;
-	            else
-	            	report.academic_struggles = false;  
+	        	this.report.academic_struggles = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_disruptionOfClassLessonActivity:
-	            if (checked)
-	            	report.academic_disruptionOfClassLessonActivity = true;
-	            else
-	            	report.academic_disruptionOfClassLessonActivity = false;  
+	        	this.report.academic_disruptionOfClassLessonActivity = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_refusalToFollowDirectionsAndParticipate:
-	            if (checked)
-	            	report.academic_refusalToFollowDirectionsAndParticipate = true;
-	            else
-	            	report.academic_refusalToFollowDirectionsAndParticipate = false;  
+	        	this.report.academic_refusalToFollowDirectionsAndParticipate = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_unPreparedAndDisorganized:
-	            if (checked)
-	            	report.academic_unPreparedAndDisorganized = true;
-	            else
-	            	report.academic_unPreparedAndDisorganized = false;  
+	        	this.report.academic_unPreparedAndDisorganized = checked; 
 	            break;
 	            
 	        case R.id.checkbox_academic_failureToCompleteHomeworkAssignment:
-	            if (checked)
-	            	report.academic_failureToCompleteHomeworkAssignment = true;
-	            else
-	            	report.academic_failureToCompleteHomeworkAssignment = false;  
+	        	this.report.academic_failureToCompleteHomeworkAssignment = checked;
 	            break;
 	            
 	        case R.id.checkbox_academic_questionableAcademicIntegrity:
-	            if (checked)
-	            	report.academic_questionableAcademicIntegrity = true;
-	            else
-	            	report.academic_questionableAcademicIntegrity = false;  
+	        	this.report.academic_questionableAcademicIntegrity = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_plannedIgnoring:
-	            if (checked)
-	            	report.strategy_plannedIgnoring = true;
-	            else
-	            	report.strategy_plannedIgnoring = false;  
+	        	this.report.strategy_plannedIgnoring = checked;
 	            break;
 	            
 	            
-	            //strategies
+	        // Strategies
 	        case R.id.checkbox_strategy_behaviorLog:
-	            if (checked)
-	            	report.strategy_behaviorLog = true;
-	            else
-	            	report.strategy_behaviorLog = false;  
+	        	this.report.strategy_behaviorLog = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_reteachReviewExpectations:
-	            if (checked)
-	            	report.strategy_reteachReviewExpectations = true;
-	            else
-	            	report.strategy_reteachReviewExpectations = false;  
+	        	this.report.strategy_reteachReviewExpectations = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_restorativeAction:
-	            if (checked)
-	            	report.strategy_restorativeAction = true;
-	            else
-	            	report.strategy_restorativeAction = false;  
+	        	this.report.strategy_restorativeAction = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_apologyVerbalAndOrWritten:
-	            if (checked)
-	            	report.strategy_apologyVerbalAndOrWritten = true;
-	            else
-	            	report.strategy_apologyVerbalAndOrWritten = false;  
+	        	this.report.strategy_apologyVerbalAndOrWritten = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_scholarPairingTimeOut:
-	            if (checked)
-	            	report.strategy_scholarPairingTimeOut = true;
-	            else
-	            	report.strategy_scholarPairingTimeOut = false;  
+	        	this.report.strategy_scholarPairingTimeOut = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_timeOut:
-	            if (checked)
-	            	report.strategy_timeOut = true;
-	            else
-	            	report.strategy_timeOut = false;  
+	        	this.report.strategy_timeOut = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_ageAppropriateWritingActivity:
-	            if (checked)
-	            	report.strategy_ageAppropriateWritingActivity = true;
-	            else
-	            	report.strategy_ageAppropriateWritingActivity = false;  
+	        	this.report.strategy_ageAppropriateWritingActivity = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_behaviorProcessingForm:
-	            if (checked)
-	            	report.strategy_behaviorProcessingForm = true;
-	            else
-	            	report.strategy_behaviorProcessingForm = false;  
+	        	this.report.strategy_behaviorProcessingForm = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_teacherScholarConversationOutsideClassroom:
-	            if (checked)
-	            	report.strategy_teacherScholarConversationOutsideClassroom = true;
-	            else
-	            	report.strategy_teacherScholarConversationOutsideClassroom = false;  
+	        	this.report.strategy_teacherScholarConversationOutsideClassroom = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_conversationWithFamily:
-	            if (checked)
-	            	report.strategy_conversationWithFamily = true;
-	            else
-	            	report.strategy_conversationWithFamily = false;  
+	        	this.report.strategy_conversationWithFamily = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_conference:
-	            if (checked)
-	            	report.strategy_conference = true;
-	            else
-	            	report.strategy_conference = false;  
+	        	this.report.strategy_conference = checked;
 	            break;
 	            
 	        case R.id.checkbox_strategy_lossOfPriveleges:
-	            if (checked)
-	            	report.strategy_lossOfPriveleges = true;
-	            else
-	            	report.strategy_lossOfPriveleges = false;  
+	        	this.report.strategy_lossOfPriveleges = checked;
 	            break;
 	    }
 	}
 	
-	private void setSpinnerContent(View view) {
+	private void initSpinnerContent(View view) {
 	  behavior_settings_spinner = (Spinner) view.findViewById( R.id.behavior_settings_spinner );
 	  academic_settings_spinner = (Spinner) view.findViewById( R.id.academic_settings_spinner); 
 	  grade_spinner = (Spinner) view.findViewById( R.id.grade_spinner);

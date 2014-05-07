@@ -11,29 +11,31 @@
     
     <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/scholar_name"
-        style="?android:attr/listSeparatorTextViewStyle" />
+        android:text="@string/scholar_name"/>
     
     <EditText android:id="@+id/scholar_name"
         android:inputType="textCapWords"
+        android:layout_gravity="right"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"/>
     
     
     <!-- drop-down for grade -->
     <LinearLayout android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/grade" />
-    <Spinner
-        android:id="@+id/grade_spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:entries="@array/grade_array" />
+        android:layout_height="wrap_content" >
+ 
+	    <TextView android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/grade" />
+	    <Spinner
+	        android:id="@+id/grade_spinner"
+	        android:layout_width="0dip"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_gravity="right"
+	        android:entries="@array/grade_array" />
         
     </LinearLayout>
     
@@ -42,21 +44,25 @@
     <DatePicker 
         android:id="@+id/SelectDate"
         android:layout_marginTop="10dp"  
-        android:layout_width="fill_parent" 
+        android:layout_width="match_parent" 
         android:layout_height="wrap_content"
         android:gravity="center|center_horizontal|center_vertical"
-        android:calendarViewShown="false">
+        android:calendarViewShown="false" >
     
-</DatePicker>
+	</DatePicker>
     
     
     <!-- checkboxes for behavior report -->
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/b_report"
+        style="?android:attr/listSeparatorTextViewStyle" />
+    
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/b_report" />
-    <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/positive" />
+    
     <!-- 1 -->
     <CheckBox android:id="@+id/checkbox_behavior_respectForSelfAndOthers"
         android:layout_width="wrap_content"
@@ -81,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="@string/behavior_peerMediation"
         android:onClick="onCheckboxClicked"/>
-   <!-- 5 -->
+   	<!-- 5 -->
     <CheckBox android:id="@+id/checkbox_behavior_helpingPeerOrStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,8 +111,11 @@
         android:layout_height="wrap_content"
         android:text="@string/behavior_goingAboveAndBeyond"
         android:onClick="onCheckboxClicked"/>
+    
+    <!-- Negative Behavior Reports -->
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="@string/negative" />
     <!-- 9 -->
     <CheckBox android:id="@+id/checkbox_behavior_refusalToFollowDirectionsOrParticipate"
@@ -194,9 +203,10 @@
     </LinearLayout>    
         
     <!-- checkboxes for academic report -->
-    <TextView android:layout_width="wrap_content"
+    <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/a_report" />
+        android:text="@string/a_report"
+        style="?android:attr/listSeparatorTextViewStyle" />
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/positive" />
@@ -312,9 +322,11 @@
 
     // checkboxes for suggested strategies
 
-    <TextView android:layout_width="wrap_content"
+    <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/strategies" />
+        android:text="@string/strategies"
+        style="?android:attr/listSeparatorTextViewStyle" />
+    
         <!-- 1 -->
     <CheckBox android:id="@+id/checkbox_strategy_plannedIgnoring"
         android:layout_width="wrap_content"
@@ -414,6 +426,7 @@
         android:id="@+id/submit_report_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Submit Report" />
         
     </LinearLayout>
