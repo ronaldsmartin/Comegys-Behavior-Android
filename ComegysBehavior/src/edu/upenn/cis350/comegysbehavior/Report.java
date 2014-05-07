@@ -85,6 +85,9 @@ public class Report implements Parcelable {
 
 	public String academicSetting = "";
 	public String reportDetailsAndComments = "";
+	public String strategyComment = "";
+	public String academicComment = "";
+	public String behaviorComment = "";
 	
 	/**
 	 * 
