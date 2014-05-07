@@ -32,57 +32,57 @@ public class PastReportDetails extends Activity {
 		pastReport = (Report) getIntent().getParcelableExtra(getString(R.string.past_report_data));
 
 		// Set all labels.
-		//Set Name
+		// Set Name
 		TextView nameLabel = (TextView) findViewById(R.id.name);
 		String name =  pastReport.studentName;
 		nameLabel.setText(name); 
 		
-		//Set Grade
+		// Set Grade
 		TextView gradeLabel = (TextView) findViewById(R.id.grade);
 		String grade =  pastReport.studentGrade;
 		gradeLabel.setText(grade);
 		
-		//Set Date
+		// Set Date
 		TextView dateLabel = (TextView) findViewById(R.id.date);
 		String date =  pastReport.reportCreatedDate;
 		dateLabel.setText(date);
 		
-		//Set Behavior Setting
+		// Set Behavior Setting
 		TextView bSettingLabel = (TextView) findViewById(R.id.behavior_location);
 		String bSetting =  pastReport.behaviorSetting;
 		bSettingLabel.setText(bSetting);
 		
-		//Set Behavior Details
+		// Set Behavior Details
 		TextView behaviorLabel = (TextView) findViewById(R.id.behavior_report_details);
 		String behavior =  pastReport.behaviorSummary;
 		behaviorLabel.setText(behavior);
 		
-		//Set Behavior Comments
+		// Set Behavior Comments
 		TextView bCommsLabel = (TextView) findViewById(R.id.behavior_report_comments);
 		String behaviorCom =  pastReport.behaviorComment;
 		bCommsLabel.setText(behaviorCom);
 		
-		//Set Acedemic Setting
+		// Set Academic Setting
 		TextView aSettingLabel = (TextView) findViewById(R.id.academic_location);
 		String aSetting =  pastReport.academicSetting;
 		aSettingLabel.setText(aSetting);
 		
-		//Set Acedemic Details
+		// Set Academic Details
 		TextView academicLabel = (TextView) findViewById(R.id.academic_report_details);
 		String academic =  pastReport.academicSummary;
 		academicLabel.setText(academic);
 		
-		//Set Acedemic Comments
+		// Set Academic Comments
 		TextView academicComsLabel = (TextView) findViewById(R.id.academic_report_comments);
 		String academicCom =  pastReport.academicComment;
 		academicComsLabel.setText(academicCom);
 		
-		//Set Strategies Details
+		// Set Strategies Details
 		TextView strategiesLabel = (TextView) findViewById(R.id.strategies_report_details);
 		String strategy =  pastReport.strategySummary;
 		strategiesLabel.setText(strategy);
 		
-		//Set strategies Comments
+		// Set strategies Comments
 		TextView strategiesComLabel = (TextView) findViewById(R.id.strategies_report_comments);
 		String strategyCom =  pastReport.strategyComment;
 		strategiesComLabel.setText(strategyCom);

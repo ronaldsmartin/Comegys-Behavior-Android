@@ -10,6 +10,7 @@
     <string name="send_email">Send Email</string>
     <string name="delete_report">Delete Report</string> 
     
+    <string name="report_header">Basic Information</string>
     <string name="scholar_name">Scholar Name</string>
     <string name="grade">Grade</string>
     <string name="date">Date</string>
