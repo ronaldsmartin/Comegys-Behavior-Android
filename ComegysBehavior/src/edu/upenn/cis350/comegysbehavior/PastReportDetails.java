@@ -20,24 +20,62 @@ public class PastReportDetails extends Activity {
 		final Report pastReport = (Report) getIntent().getParcelableExtra(getString(R.string.past_report_data));
 
 		// Set all labels.
+		//Set Name
 		TextView nameLabel = (TextView) findViewById(R.id.name);
-		String name = "Scholar Name: "+ pastReport.studentName;
+		String name =  pastReport.studentName;
 		nameLabel.setText(name); 
+		
+		//Set Grade
+		TextView gradeLabel = (TextView) findViewById(R.id.grade);
+		String grade =  pastReport.studentGrade;
+		gradeLabel.setText(grade);
+		
+		//Set Date
+		TextView dateLabel = (TextView) findViewById(R.id.date);
+		String date =  pastReport.reportCreatedDate;
+		dateLabel.setText(date);
+		
+		//Set Behavior Setting
+		TextView bSettingLabel = (TextView) findViewById(R.id.behavior_location);
+		String bSetting =  pastReport.behaviorSetting;
+		bSettingLabel.setText(bSetting);
+		
+		//Set Behavior Details
+		TextView behaviorLabel = (TextView) findViewById(R.id.behavior_report_details);
+		String behavior =  pastReport.behaviorSummary;
+		behaviorLabel.setText(behavior);
+		
+		//Set Behavior Comments
+//		TextView bCommsLabel = (TextView) findViewById(R.id.behavior_report_comments);
+//		String behaviorCom =  pastReport.behaviorComments;
+//		bCommsLabel.setText(behaviorCom);
+		
+		//Set Acedemic Setting
+		TextView aSettingLabel = (TextView) findViewById(R.id.academic_location);
+		String aSetting =  pastReport.academicSetting;
+		aSettingLabel.setText(aSetting);
+		
+		//Set Acedemic Details
+		TextView academicLabel = (TextView) findViewById(R.id.academic_report_details);
+		String academic =  pastReport.academicSummary;
+		academicLabel.setText(academic);
+		
+		//Set Acedemic Comments
+//		TextView academicComsLabel = (TextView) findViewById(R.id.academic_report_comments);
+//		String academicCom =  pastReport.academicComments;
+//		academicComsLabel.setText(academicCom);
+		
+		//Set Strategies Details
+		TextView strategiesLabel = (TextView) findViewById(R.id.strategies_report_details);
+		String strategy =  pastReport.strategySummary;
+		strategiesLabel.setText(strategy);
+		
+		//Set strategies Comments
+//		TextView strategiesComLabel = (TextView) findViewById(R.id.strategies_report_details);
+//		String strategyCom =  pastReport.strategyComments;
+//		strategiesComLabel.setText(strategyCom);
 
-		/*TextView emailLabel = (TextView) findViewById(R.id.email);
-		emailLabel.setText(brother.Email_Address);
-
-		TextView phone = (TextView) findViewById(R.id.phone);
-		phone.setText(brother.Phone_Number);
-
-		TextView yearLabel = (TextView) findViewById(R.id.year);
-		yearLabel.setText(brother.Expected_Graduation_Year);
-
-		TextView pledgeClassLabel = (TextView) findViewById(R.id.pledge_class);
-		pledgeClassLabel.setText(brother.Pledge_Class);
-
-		TextView majorLabel = (TextView) findViewById(R.id.major);
-		majorLabel.setText(brother.Major);*/
+		
 	
 	}
 }
