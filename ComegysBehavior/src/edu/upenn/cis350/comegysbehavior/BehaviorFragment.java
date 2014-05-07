@@ -348,4 +348,8 @@ public class BehaviorFragment extends Fragment {
 
 		alert.show();
 	}
+	
+	public Report getReport() {
+		return this.report;
+	}
 }

@@ -129,6 +129,11 @@ public class MainActivity extends FragmentActivity implements
 	public void resetBehaviorFragment() {
 		mSectionsPagerAdapter.resetReportFragment();
 	}
+	
+	public BehaviorFragment getBehaviorFragment() {
+		// For testing.
+		return (BehaviorFragment) mSectionsPagerAdapter.getItem(0);
+	}
 
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to

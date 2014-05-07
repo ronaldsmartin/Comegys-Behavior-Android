@@ -1,8 +1,10 @@
-package edu.upenn.cis350.comegysbehavior;
+package tests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import edu.upenn.cis350.comegysbehavior.*;
 
 public class MainActivityTest {
 
@@ -10,7 +12,7 @@ public class MainActivityTest {
 	public void testResetBehaviorFragment() {
 		MainActivity ma = new MainActivity();
 		ma.resetBehaviorFragment();
-		BehaviorFragment bf = new BehaviorFragment();
+		BehaviorFragment bf = ma.getBehaviorFragment();
 		assertFalse(bf.getReport().academic_completesHomeworkAndAssignments);
 	}
 
