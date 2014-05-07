@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import android.support.v4.app.Fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -85,10 +87,14 @@ public class BehaviorFragment extends Fragment {
             	setReportSummaries(rootView);
             	 
             	// Save in background
+            	if (!report.studentName.equals("")) {
             	report.getParseObject().saveInBackground();
             	 
             	Toast submittedNotification = Toast.makeText(getActivity(), "Report submitted!", Toast.LENGTH_SHORT);
             	submittedNotification.show();
+            	} else {
+            		showFixUserInputDialog();
+            	}
              }
          });
 	}
@@ -319,5 +325,20 @@ public class BehaviorFragment extends Fragment {
 	  behavior_settings_spinner = (Spinner) view.findViewById( R.id.behavior_settings_spinner );
 	  academic_settings_spinner = (Spinner) view.findViewById( R.id.academic_settings_spinner); 
 	  grade_spinner = (Spinner) view.findViewById( R.id.grade_spinner);
+	}
+	
+	private void showFixUserInputDialog() {
+		AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+		
+		alert.setTitle("Incomplete form");
+		alert.setMessage("Please enter the student's name before submitting.");
+
+		alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		public void onClick(DialogInterface dialog, int whichButton) {
+
+		  }
+		});
+
+		alert.show();
 	}
 }
