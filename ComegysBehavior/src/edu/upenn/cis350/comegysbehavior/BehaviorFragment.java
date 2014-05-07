@@ -20,7 +20,7 @@ import android.widget.Spinner;
  */
 public class BehaviorFragment extends Fragment {
 	
-	private Report report;
+	private Report report = new Report();
 	
 	public BehaviorFragment() {
 	}
@@ -38,7 +38,6 @@ public class BehaviorFragment extends Fragment {
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.report, container, false);
 		setSpinnerContent(rootView);
-		report = new Report();
 		
 		student_name = (EditText) rootView.findViewById(R.id.scholar_name);
 		strategy_comment = (EditText) rootView.findViewById(R.id.strategy_comment);

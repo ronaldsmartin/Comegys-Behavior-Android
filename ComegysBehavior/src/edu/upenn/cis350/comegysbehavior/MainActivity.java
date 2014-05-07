@@ -123,6 +123,11 @@ public class MainActivity extends FragmentActivity implements
 	public void onTabReselected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
 	}
+	
+	public void onCheckboxClicked(View view) {
+		BehaviorFragment behaviorFragment = (BehaviorFragment) mSectionsPagerAdapter.getItem(0);
+		behaviorFragment.onCheckboxClicked(view);
+	}
 
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
