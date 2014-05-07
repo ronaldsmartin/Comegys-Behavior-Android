@@ -20,7 +20,6 @@ public class Report implements Parcelable {
 	public String reportCreatedDate = "";
 	
 	// Summaries
-	public String locationSummary = "";
 	public String behaviorSummary = "";
 	public String academicSummary = "";
 	public String strategySummary = "";
@@ -115,6 +114,9 @@ public class Report implements Parcelable {
         this.behaviorComment = parseObject.getString("behavior_comments");
         this.academicComment = parseObject.getString("academic_comments");
         this.strategyComment = parseObject.getString("strategy_comments");
+        this.behaviorSummary = parseObject.getString("behavior_details");
+        this.academicSummary = parseObject.getString("academic_details");
+        this.strategySummary= parseObject.getString("strategy_details");
         createSummaries();
     }
     
@@ -251,10 +253,15 @@ public class Report implements Parcelable {
         reportParse.put("strategy_lossOfPriveleges", strategy_lossOfPriveleges);
         reportParse.put("strategy_other", strategy_other);
         
-        reportParse.put("report_details", reportDetailsAndComments);
+        reportParse.put("report_details", reportDetailsAndComments);      
         reportParse.put("behavior_comments", this.behaviorComment);
         reportParse.put("academic_comments",this.academicComment);
         reportParse.put("strategy_comments", this.strategyComment);
+        
+        reportParse.put("behavior_details", this.behaviorSummary);
+        reportParse.put("academic_details", this.academicSummary);
+        reportParse.put("strategy_details", this.strategySummary);
+        
         return reportParse;
     }
     
@@ -278,8 +285,10 @@ public class Report implements Parcelable {
 		out.writeString(this.studentName);
 		out.writeString(this.studentGrade);
 		out.writeString(this.reportCreatedDate);
+		out.writeString(this.behaviorSetting);
 		out.writeString(this.behaviorSummary);
 		out.writeString(this.behaviorComment);
+		out.writeString(this.academicSetting);
 		out.writeString(this.academicSummary);
 		out.writeString(this.academicComment);
 		out.writeString(this.strategySummary);
@@ -291,8 +300,10 @@ public class Report implements Parcelable {
 		this.studentName              = in.readString();
 		this.studentGrade             = in.readString();
 		this.reportCreatedDate        = in.readString();
+		this.behaviorSetting		  = in.readString();
 		this.behaviorSummary          = in.readString();
 		this.behaviorComment		  = in.readString();
+		this.academicSetting		  = in.readString();
 		this.academicSummary          = in.readString();
 		this.academicComment		  = in.readString();
 		this.strategySummary          = in.readString();
