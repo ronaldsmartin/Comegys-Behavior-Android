@@ -1,38 +1,21 @@
 package edu.upenn.cis350.comegysbehavior;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Locale;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.parse.Parse;
-import com.parse.ParseAnalytics;
-import com.parse.ParseObject;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener {
@@ -128,6 +111,20 @@ public class MainActivity extends FragmentActivity implements
 		BehaviorFragment behaviorFragment = (BehaviorFragment) mSectionsPagerAdapter.getItem(0);
 		behaviorFragment.onCheckboxClicked(view);
 	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode,
+            Intent data) {
+		if (requestCode == ReportsListFragment.REPORT_DETAILS_REQUEST) {
+			ReportsListFragment reportsList = (ReportsListFragment) mSectionsPagerAdapter.getItem(1);
+			reportsList.onActivityResult(requestCode, resultCode, data);
+		}
+        
+    }
+	
+	public void resetBehaviorFragment() {
+		mSectionsPagerAdapter.resetReportFragment();
+	}
 
 	/**
 	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -175,6 +172,10 @@ public class MainActivity extends FragmentActivity implements
 				return getString(R.string.title_section2).toUpperCase(l);
 			}
 			return null;
+		}
+		
+		private void resetReportFragment() {
+			this.reportFragment = new BehaviorFragment();
 		}
 	}
 

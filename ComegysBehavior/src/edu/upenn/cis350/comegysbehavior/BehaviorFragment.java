@@ -5,7 +5,6 @@ import java.util.Calendar;
 import android.support.v4.app.Fragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,11 +83,14 @@ public class BehaviorFragment extends Fragment {
             	setReportSettings();
             	setReportSummaries(rootView);
             	 
-            	// Save in background
+            	// Save in background and notify the user.
             	report.getParseObject().saveInBackground();
             	 
             	Toast submittedNotification = Toast.makeText(getActivity(), "Report submitted!", Toast.LENGTH_SHORT);
             	submittedNotification.show();
+            	
+            	// Reset the fields.
+            	resetFields();
              }
          });
 	}
@@ -99,7 +101,7 @@ public class BehaviorFragment extends Fragment {
    		int year =  date.getYear();
    		Calendar calendar = Calendar.getInstance();
    		calendar.set(year, month, day);
-   		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+   		SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy", getResources().getConfiguration().locale);
    		report.reportCreatedDate = sdf.format(calendar.getTime());
 	}
 	
@@ -319,5 +321,10 @@ public class BehaviorFragment extends Fragment {
 	  behavior_settings_spinner = (Spinner) view.findViewById( R.id.behavior_settings_spinner );
 	  academic_settings_spinner = (Spinner) view.findViewById( R.id.academic_settings_spinner); 
 	  grade_spinner = (Spinner) view.findViewById( R.id.grade_spinner);
+	}
+	
+	private void resetFields() {
+		MainActivity mainActivity = (MainActivity) getActivity();
+    	mainActivity.resetBehaviorFragment();
 	}
 }

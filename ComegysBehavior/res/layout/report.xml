@@ -196,7 +196,7 @@
 	        android:layout_height="wrap_content"
 	        android:text="@string/comments" />
 	    <EditText android:id="@+id/behavior_comment"
-	        android:inputType="textCapWords"
+	        android:inputType="textMultiLine|textCapSentences"
 	        android:layout_width="0dip"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"/>
@@ -417,7 +417,7 @@
         android:layout_height="wrap_content"
         android:text="@string/comments" />
     <EditText android:id="@+id/strategy_comment"
-        android:inputType="textCapSentences"
+        android:inputType="textMultiLine|textCapSentences"
         android:layout_width="0dip"
         android:layout_height="wrap_content"
         android:layout_weight="1"/>

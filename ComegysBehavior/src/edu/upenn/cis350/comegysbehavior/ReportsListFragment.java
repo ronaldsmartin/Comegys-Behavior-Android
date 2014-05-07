@@ -35,6 +35,9 @@ public class ReportsListFragment extends Fragment {
 
 	private List<Report> reports;
 	private ArrayAdapter<String> adapter;
+	static final int REPORT_DETAILS_REQUEST = 5;
+	static final int RESULT_DELETED_REPORT  = 10;
+	
 	/**
 	 * 
 	 */
@@ -48,7 +51,7 @@ public class ReportsListFragment extends Fragment {
 		setHasOptionsMenu(true); 
 		this.reports = new ArrayList<Report>();
 		
-		retrieveReports();
+		refreshReports();
 		
 		return view;
 	}
@@ -64,18 +67,15 @@ public class ReportsListFragment extends Fragment {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	        case R.id.refresh_report_list:
-	            retrieveReports();
+	            refreshReports();
 	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
 	
-	private void refreshReports() {
-		retrieveReports();
-	}
 	
-	protected void retrieveReports() {
+	protected void refreshReports() {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Report");
 		query.findInBackground(new FindCallback<ParseObject>() {
 			@Override
@@ -113,10 +113,17 @@ public class ReportsListFragment extends Fragment {
 				
 				Intent detailPage = new Intent(getActivity(), PastReportDetails.class);
 				detailPage.putExtra(getString(R.string.past_report_data), pastReportList.get(position));
-				getActivity().startActivity(detailPage);
+				getActivity().startActivityForResult(detailPage, REPORT_DETAILS_REQUEST);
 			}
 		});
 	}
+	
+	@Override
+	public void onActivityResult(int requestCode, int resultCode,
+            Intent data) {
+        refreshReports();
+    }
+
 
 	public class ReportNameComparator implements Comparator<Report> {
 		@Override

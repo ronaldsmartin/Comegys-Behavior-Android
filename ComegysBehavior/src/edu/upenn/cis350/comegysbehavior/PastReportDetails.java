@@ -1,8 +1,5 @@
 package edu.upenn.cis350.comegysbehavior;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Collections;
 import java.util.List;
 
 import com.parse.FindCallback;
@@ -10,18 +7,14 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
-import edu.upenn.cis350.comegysbehavior.ReportsListFragment.ReportNameComparator;
-
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -104,49 +97,63 @@ public class PastReportDetails extends Activity {
        final Button deleteButton = (Button) findViewById(R.id.delete_button);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	System.out.println("Delete button clicked");
-            	ParseQuery<ParseObject> query = ParseQuery.getQuery("Report");
-            	query.whereEqualTo("objectId", pastReport.objectID);
-        		query.findInBackground(new FindCallback<ParseObject>() {
-        			@Override
-        			public void done(List<ParseObject> parseReportList, ParseException e) {
-        				if (e == null)
-							try {
-								System.out.println(pastReport.objectID + "HIIIIDDNKSJ");
-								if (parseReportList.size() > 0) {
-									parseReportList.get(0).delete();
-									finish();
-									
-								}
-							} catch (ParseException e1) {
-								e1.printStackTrace();
-							}
-        			}
-        		});
+            	new AlertDialog.Builder(PastReportDetails.this)
+            		.setTitle("Confirm Deletion")
+            		.setMessage("Delete this report?")
+            		.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+		            	@Override
+		            	public void onClick(DialogInterface dialog, int which) {
+		            		deleteReport();
+		            		
+			            	// Notify the user that deletion is complete.
+			            	Toast logoutNotification = Toast.makeText(PastReportDetails.this, "Report deleted.", Toast.LENGTH_SHORT);
+			            	logoutNotification.show();
+			            	PastReportDetails.this.finish();
+			            }
+			        })
+	            	.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+		            	public void onClick(DialogInterface dialog, int which) {
+		            		// do nothing
+		            	}
+		            })
+	            	.setIcon(android.R.drawable.ic_dialog_alert)
+	            	.show();
             }
         });	
          
 	}
 	
+	private void deleteReport() {
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Report");
+    	query.whereEqualTo("objectId", pastReport.objectID);
+		query.findInBackground(new FindCallback<ParseObject>() {
+			@Override
+			public void done(List<ParseObject> parseReportList, ParseException e) {
+				if (e == null)
+					try {
+						if (parseReportList.size() > 0) {
+							parseReportList.get(0).delete();
+							PastReportDetails.this.setResult(ReportsListFragment.RESULT_DELETED_REPORT);
+						}
+					} catch (ParseException e1) {
+						e1.printStackTrace();
+					}
+			}
+		});
+	}
+	
 	protected void sendEmail(String emailAddress) {
-	      Log.i("Send email", "");
-
-	      String[] TO = {emailAddress};
-	      String[] CC = {};
 	      Intent emailIntent = new Intent(Intent.ACTION_SEND);
 	      emailIntent.setData(Uri.parse("mailto:"));
 	      emailIntent.setType("text/plain");
 
 
-	      emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-	      emailIntent.putExtra(Intent.EXTRA_CC, CC);
+	      emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {emailAddress});
 	      emailIntent.putExtra(Intent.EXTRA_SUBJECT, "New Student Behavior Report");
 	      emailIntent.putExtra(Intent.EXTRA_TEXT, pastReport.createEmailReportString());
 
 	      try {
 	         startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-	         
-	         Log.i("Finished sending email...", "");
 	      } catch (android.content.ActivityNotFoundException ex) {
 	         Toast.makeText(this, 
 	         "There is no email client installed.", Toast.LENGTH_SHORT).show();
