@@ -98,7 +98,7 @@ public class ReportsListFragment extends Fragment {
 		ArrayList<String> alphabetizedStudentNames = new ArrayList<String>();
 		final ArrayList<Report> pastReportList = new ArrayList<Report>(ReportsListFragment.this.reports);
 		for (Report report : ReportsListFragment.this.reports) {
-			alphabetizedStudentNames.add(report.studentName);
+			alphabetizedStudentNames.add(report.toString());
 		}
 		this.adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, alphabetizedStudentNames);
 		
