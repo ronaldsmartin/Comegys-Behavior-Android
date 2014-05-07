@@ -278,8 +278,10 @@ public class Report implements Parcelable {
 		out.writeString(this.studentName);
 		out.writeString(this.studentGrade);
 		out.writeString(this.reportCreatedDate);
+		out.writeString(this.behaviorSetting);
 		out.writeString(this.behaviorSummary);
 		out.writeString(this.behaviorComment);
+		out.writeString(this.academicSetting);
 		out.writeString(this.academicSummary);
 		out.writeString(this.academicComment);
 		out.writeString(this.strategySummary);
@@ -291,8 +293,10 @@ public class Report implements Parcelable {
 		this.studentName              = in.readString();
 		this.studentGrade             = in.readString();
 		this.reportCreatedDate        = in.readString();
+		this.behaviorSetting		  = in.readString();
 		this.behaviorSummary          = in.readString();
 		this.behaviorComment		  = in.readString();
+		this.academicSetting		  = in.readString();
 		this.academicSummary          = in.readString();
 		this.academicComment		  = in.readString();
 		this.strategySummary          = in.readString();
